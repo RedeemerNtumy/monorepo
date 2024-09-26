@@ -1,11 +1,12 @@
 package stepDefinitions;
 
+import base.BaseTests;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ManageInvoicesStepDefinition {
+public class ManageInvoicesStepDefinition extends BaseTests {
     @Given("the user is on the create invoice page")
     public void theUserIsOnTheCreateInvoicePage() {
     }

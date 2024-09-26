@@ -1,11 +1,12 @@
 package stepDefinitions;
 
+import base.BaseTests;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ToggleModeStepDefinition {
+public class ToggleModeStepDefinition extends BaseTests {
     @Given("the user is on the settings page")
     public void theUserIsOnTheSettingsPage() {
     }

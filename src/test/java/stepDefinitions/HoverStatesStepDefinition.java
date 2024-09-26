@@ -1,10 +1,11 @@
 package stepDefinitions;
 
+import base.BaseTests;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class HoverStatesStepDefinition {
+public class HoverStatesStepDefinition extends BaseTests {
     @Given("a button is visible on the page")
     public void aButtonIsVisibleOnThePage() {
     }

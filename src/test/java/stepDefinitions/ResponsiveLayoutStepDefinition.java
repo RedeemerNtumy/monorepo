@@ -1,10 +1,11 @@
 package stepDefinitions;
 
+import base.BaseTests;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class ResponsiveLayoutStepDefinition {
+public class ResponsiveLayoutStepDefinition extends BaseTests {
     @Given("the user accesses the app on a mobile device")
     public void theUserAccessesTheAppOnAMobileDevice() {
     }
