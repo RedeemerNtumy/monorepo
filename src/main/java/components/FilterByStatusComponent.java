@@ -10,16 +10,16 @@ public class FilterByStatusComponent {
     private WebDriver driver;
     private Actions actions;
 
-    @FindBy(css = ".title-clickable")
+    @FindBy(css = ".select-filter")
     private WebElement filterByStatus;
 
-    @FindBy(css = "#draft")
+    @FindBy(css = "input[name='draft']")
     public WebElement draftCheckbox;
 
-    @FindBy(css = "#pending")
+    @FindBy(css = "input[name='pending']")
     public WebElement pendingCheckbox;
 
-    @FindBy(css = "#paid")
+    @FindBy(css = "input[name='paid']")
     public WebElement paidCheckbox;
 
     public FilterByStatusComponent(WebDriver driver) {

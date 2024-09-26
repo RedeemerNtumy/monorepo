@@ -1,4 +1,4 @@
-FROM maven:3.9.9-jdk-21
+FROM maven:3.6.3-jdk-11
 
 # Set the working directory
 WORKDIR /app

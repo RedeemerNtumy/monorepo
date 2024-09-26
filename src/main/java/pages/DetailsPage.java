@@ -3,14 +3,13 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
 public class DetailsPage {
     private WebDriver driver;
-    private By deleteButton = By.xpath("//div[contains(@class, 'controls-top')]//button[contains(@class, 'delete-btn')]");//By.cssSelector(".controls-bottom .btn.delete-btn");
-    private By editButton = By.xpath("//div[contains(@class, 'controls-top')]//button[contains(@class, 'edit-btn')]");
-    private By confirmDeleteButton = By.xpath("//div[@class='delete-item-container show-modal']//button[@class='btn delete-btn']\n");
-    private By cancelDeleteButton = By.xpath("//div[@class='delete-item-container show-modal']//button[@class='btn edit-btn']\n");
-    private By goBackButton = By.className("go-back");
+    private By deleteButton = By.xpath("//button[@id='delete-invoice']");
+    private By saveButton = By.xpath("//button[@id='save-invoice']");
+    private By confirmDeleteButton = By.xpath("//button[@id='confirm-delete']");
+    private By cancelDeleteButton = By.xpath("//button[@id='cancel-delete']");
+    private By invoiceDetail = By.id("invoice-detail");
 
     public DetailsPage(WebDriver driver) {
         this.driver = driver;
@@ -20,13 +19,8 @@ public class DetailsPage {
         driver.findElement(deleteButton).click();
     }
 
-    public EditInvoicePage clickEditButton() {
-        driver.findElement(editButton).click();
-        return new EditInvoicePage(driver);
-    }
-
-    public void clickGoBackButton() {
-        driver.findElement(goBackButton).click();
+    public void clickSaveButton() {
+        driver.findElement(saveButton).click();
     }
 
     public void clickConfirmDeleteButton() {
@@ -37,9 +31,19 @@ public class DetailsPage {
         driver.findElement(cancelDeleteButton).click();
     }
 
-    public String getDetailsPageUrl() {
-        return driver.getCurrentUrl();
-    }
-
-
+//    public boolean isConfirmationModalDisplayed() {
+//        // Implementation to check if modal is displayed
+//    }
+//
+//    public void selectInvoice(String invoiceId) {
+//        // Implementation to select an invoice
+//    }
+//
+//    public void editInvoiceDetails(String invoiceNumber, String date, double amount, String status) {
+//        // Implementation to edit invoice details
+//    }
+//
+//    public boolean isInvoiceUpdated(String invoiceNumber, String date, double amount, String status) {
+//        // Implementation to verify updated details
+//    }
 }
