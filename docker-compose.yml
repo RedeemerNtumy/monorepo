@@ -1,0 +1,8 @@
+version: '3'
+services:
+  cucumber-test:
+    build: .
+    container_name: cucumber_test_runner
+    volumes:
+      - .:/app
+    command: ["mvn", "test"]
