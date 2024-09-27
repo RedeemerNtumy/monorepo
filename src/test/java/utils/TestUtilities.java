@@ -6,7 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class TestUtilities {
 
     public static WebDriver setupDriver() {
-        System.setProperty("webdriver.edge.driver","resources/msedgedriver");
+        System.setProperty("webdriver.edge.driver", "resources/msedgedriver");
         return new EdgeDriver();
     }
 }

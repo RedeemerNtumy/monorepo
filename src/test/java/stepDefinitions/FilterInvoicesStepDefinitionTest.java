@@ -9,14 +9,13 @@ import utils.TestUtilities;
 import java.io.IOException;
 import java.util.List;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 
-public class FilterInvoicesStepDefinition {
+public class FilterInvoicesStepDefinitionTest {
     private FilterByStatusComponent filterByStatusComponent;
     private WebDriver driver;
     private HomePage homePage;
 
-    public FilterInvoicesStepDefinition() {
+    public FilterInvoicesStepDefinitionTest() {
         this.driver = TestUtilities.setupDriver();
         this.homePage = new HomePage(driver);  // Initialize HomePage with the driver
     }

@@ -1,15 +1,16 @@
 package runner;
 
-import org.junit.runner.RunWith;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features", // Path to your feature files
-        glue = {"stepDefinitions"}, // Path to your step definitions
-        plugin = {"pretty", "html:target/cucumber-reports"}
+        features = "src/test/resources/features",
+        glue = "stepDefinitions",
+        plugin = {"pretty", "html:target/cucumber-reports.html"}
 )
 public class TestRunner {
-    // This class will be empty. It serves as the entry point for the test framework.
+
 }

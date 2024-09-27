@@ -6,7 +6,7 @@
 #    When the user fills in all required fields
 #    And the user clicks the "Create Invoice" button
 #    Then a new invoice is created with the entered details
-
+#
 #  Scenario: User views the list of invoices
 #    Given the user is on the invoices page
 #    When the user loads the page
