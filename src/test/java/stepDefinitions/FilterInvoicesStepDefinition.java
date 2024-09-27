@@ -55,45 +55,4 @@ public class FilterInvoicesStepDefinition {
         List<WebElement> invoices = homePage.getInvoicesByStatus(status);
         assertTrue("Invoices displayed do not match the filter", invoices.stream().allMatch(invoice -> invoice.getAttribute("data-status").equals(status)));
     }
-
-    @Given("the user has applied a status filter")
-    public void theUserHasAppliedAStatusFilter() {
-        filterByStatusComponent.selectCheckbox(filterByStatusComponent.paidCheckbox);
-    }
-
-    @When("the user clears the filter")
-    public void theUserClearsTheFilter() {
-        homePage.clearAllFilters();
-    }
-
-    @Then("all invoices are displayed")
-    public void allInvoicesAreDisplayed() {
-        List<WebElement> invoices = homePage.getAllInvoices();
-        assertFalse("Not all invoices are displayed", invoices.isEmpty());
-    }
-
-    @Given("the user has applied a {string} filter")
-    public void theUserHasAppliedAFilter(String status) {
-        WebElement checkbox = null;
-        switch (status) {
-            case "Draft":
-                checkbox = filterByStatusComponent.draftCheckbox;
-                break;
-            case "Pending":
-                checkbox = filterByStatusComponent.pendingCheckbox;
-                break;
-            case "Paid":
-                checkbox = filterByStatusComponent.paidCheckbox;
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid status: " + status);
-        }
-        filterByStatusComponent.selectCheckbox(checkbox);
-    }
-
-    @When("the user changes the filter to {string}")
-    public void theUserChangesTheFilterTo(String newStatus) throws IOException {
-        homePage.clearAllFilters();
-        theUserSelectsFromTheStatusFilter(newStatus);
-    }
 }
