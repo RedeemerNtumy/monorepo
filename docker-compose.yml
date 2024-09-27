@@ -1,9 +1,26 @@
 services:
+  selenium-hub:
+    image: selenium/hub:latest
+    container_name: selenium_hub
+    ports:
+      - "4444:4444"
+  
+  edge-node:
+    image: selenium/node-edge:latest
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
   cucumber-test:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: cucumber_test_runner
+    depends_on:
+      - selenium-hub
     volumes:
       - .:/app
-    ports:
-      - "8080:8080"
-    command: ["mvn", "test"]
+    environment:
+      - SELENIUM_REMOTE_URL=http://selenium-hub:4444/wd/hub
