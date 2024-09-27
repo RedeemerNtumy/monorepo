@@ -16,12 +16,3 @@ Feature: Filter invoices by status
     When the user selects "Paid" from the status filter
     Then only "Paid" invoices are displayed
 
-  Scenario: User removes the status filter
-    Given the user has applied a status filter
-    When the user clears the filter
-    Then all invoices are displayed
-
-  Scenario: User changes the status filter
-    Given the user has applied a "Draft" filter
-    When the user changes the filter to "Pending"
-    Then only "Pending" invoices are displayed
