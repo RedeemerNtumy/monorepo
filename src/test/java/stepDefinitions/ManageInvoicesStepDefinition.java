@@ -1,57 +1,70 @@
-//package stepDefinitions;
-//
-//import base.BaseTests;
-//import org.openqa.selenium.WebDriver;
-//import pages.DetailsPage;
-//import pages.HomePage;
-//import pages.InvoiceCreationPage;
-//import pages.InvoiceListPage;
-//import org.junit.Assert;
-//
-//import io.cucumber.java.en.And;
-//import io.cucumber.java.en.Given;
-//import io.cucumber.java.en.Then;
-//import io.cucumber.java.en.When;
-//import pages.NewInvoicePage;
-//
-//import static java.sql.DriverManager.getDriver;
-//
-//public class ManageInvoicesStepDefinition extends BaseTests {
-//    private WebDriver driver = getDriver();
-//    private NewInvoicePage createInvoicePage = new NewInvoicePage(driver);
-//    private HomePage invoiceListPage = new HomePage(driver);
-//    private DetailsPage detailsPage = new DetailsPage(driver);
-//
-//    @Given("the user is on the create invoice page")
-//    public void theUserIsOnTheCreateInvoicePage() {
-//        driver.navigate().to(createInvoicePage.getCreateInvoicePageUrl());
-//    }
-//
-//    @When("the user fills in all required fields")
-//    public void theUserFillsInAllRequiredFields() {
-//        createInvoicePage.enterInvoiceDetails("1234", "2024-09-20", 1500.00, "Pending");
-//    }
-//
-//    @And("the user clicks the {string} button")
-//    public void theUserClicksTheButton(String buttonName) {
-//        switch (buttonName) {
-//            case "Create Invoice":
-//                createInvoicePage.clickCreateButton();
-//                break;
-//            case "Save":
-//                detailsPage.clickSaveButton();
-//                break;
+package stepDefinitions;
+
+
+import io.cucumber.java.en.*;
+import org.openqa.selenium.WebDriver;
+import pages.HomePage;
+import pages.HomePage_CreateInvoice;
+import utils.TestUtilities;
+
+import static org.junit.Assert.assertEquals;
+
+public class ManageInvoicesStepDefinition{
+    private WebDriver driver;
+    private HomePage_CreateInvoice createInvoicePage;
+    private HomePage mainPage;
+
+    public ManageInvoicesStepDefinition() {
+        this.driver = TestUtilities.setupDriver();
+        this.mainPage = new HomePage(driver);  // Initialize HomePage with the driver
+    }
+
+    @Given("the user is on the create invoice page")
+    public void theUserIsOnTheCreateInvoicePage() {
+        driver.get("https://invoice-app-6rkf.vercel.app/");
+        createInvoicePage = mainPage.navigateToNewInvoicePage();
+    }
+
+    @When("the user fills in all required fields")
+    public void theUserFillsInAllRequiredFields() {
+        createInvoicePage
+                .fillBillFrom("123 Sender St", "Sender City", "12345", "Sender Country")
+                .fillBillTo("John Doe", "john@example.com", "456 Client St", "Client City", "67890", "Client Country")
+                .fillInvoiceDetails("9/13/2024", "Net 30 Days", "Test Invoice")
+                .addNewItem();
+    }
+
+    @And("the user clicks the {string} button")
+    public void theUserClicksTheButton(String buttonName) {
+        switch (buttonName) {
+            case "Create Invoice":
+                createInvoicePage = mainPage.navigateToNewInvoicePage();
+                break;
+            case "Save":
+                mainPage = createInvoicePage.saveChanges();
+                break;
 //            case "Delete":
 //                detailsPage.clickDeleteButton();
 //                break;
-//        }
-//    }
-//
-//    @Then("a new invoice is created with the entered details")
-//    public void aNewInvoiceIsCreatedWithTheEnteredDetails() {
-//        Assert.assertTrue(invoiceListPage.isInvoicePresent("1234"));
-//    }
-//
+        }
+    }
+
+    @Then("a new invoice is created with the entered details")
+    public void aNewInvoiceIsCreatedWithTheEnteredDetails() {
+        String expectedClientName = "John Doe";
+        String expectedStatus = "Pending"; // Example status
+        String expectedInvoiceAmount = "£1,000.00"; // Example amount
+
+        mainPage = new HomePage(driver); // Assuming driver is initialized and navigated to the homepage
+        String actualClientName = mainPage.getInvoiceDetailFromLastInvoice("client-name-class"); // Replace 'client-name-class' with actual class/identifier
+        String actualStatus = mainPage.getInvoiceDetailFromLastInvoice("status-class"); // Replace 'status-class' with actual class/identifier
+        String actualInvoiceAmount = mainPage.getInvoiceDetailFromLastInvoice("amount-class"); // Replace 'amount-class' with actual class/identifier
+
+        assertEquals(actualClientName, expectedClientName, "Client name does not match on the last invoice.");
+        assertEquals(actualStatus, expectedStatus, "Invoice status does not match on the last invoice.");
+        assertEquals(actualInvoiceAmount, expectedInvoiceAmount, "Invoice amount does not match on the last invoice.");
+    }
+
 //    @When("the user loads the page")
 //    public void theUserLoadsThePage() {
 //        driver.navigate().to(invoiceListPage.getInvoicesPageUrl());
@@ -101,4 +114,4 @@
 //    public void theInvoiceIsNotDeleted() {
 //        Assert.assertTrue(invoiceListPage.isInvoicePresent("1234"));
 //    }
-//}
+}

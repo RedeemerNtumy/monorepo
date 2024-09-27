@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class HomePage {
     private WebDriver driver;
-    private By newInvoiceButton = By.cssSelector(".btn.new-invoice-btn");
+    private By newInvoiceButton = By.cssSelector("button.create p");
     private int myTestCard = 4;
     private By invoiceIds = By.xpath("//div[@class='invoice-list-items']//p[@class='item-id']");
     private By invoiceDetailsButton = By.xpath("//div[contains(@class, 'invoice-list-items')][" + myTestCard + "]");
@@ -21,13 +21,6 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-    public String getHomeUrl() {
-        return driver.getCurrentUrl();
-    }
 
     public String getChildFromInvoiceCard(String child) {
         WebElement parentCard = driver.findElement(invoiceDetailsButton);
@@ -44,9 +37,9 @@ public class HomePage {
         return new DetailsPage(driver);
     }
 
-    public NewInvoicePage navigateToNewInvoicePage() {
+    public HomePage_CreateInvoice navigateToNewInvoicePage() {
         driver.findElement(newInvoiceButton).click();
-        return new NewInvoicePage(driver);
+        return new HomePage_CreateInvoice(driver);
     }
 
     public List<String> getAllInvoiceNumbers() {
@@ -67,5 +60,15 @@ public class HomePage {
 
     public List<WebElement> getAllInvoices() {
         return driver.findElements(allInvoicesSelector);
+    }
+
+    public WebElement getLastInvoice() {
+        List<WebElement> invoices = driver.findElements(allInvoicesSelector);
+        return invoices.get(invoices.size() - 1);
+    }
+
+    public String getInvoiceDetailFromLastInvoice(String detailClass) {
+        WebElement lastInvoice = getLastInvoice();
+        return lastInvoice.findElement(By.cssSelector("." + detailClass)).getText();
     }
 }
