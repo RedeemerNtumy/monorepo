@@ -1,7 +1,6 @@
 services:
   selenium-hub:
     image: selenium/hub:latest
-    container_name: selenium_hub
     ports:
       - "4444:4444"
     environment:
@@ -18,21 +17,17 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
       - JAVA_OPTS=-Dotel.javaagent.enabled=false
-    ports:
-      - "5901:5900"
+    volumes:
+      - /dev/shm:/dev/shm
 
   cucumber-test:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: cucumber_test_runner
     depends_on:
       - selenium-hub
     volumes:
       - .:/app
     environment:
       - SELENIUM_REMOTE_URL=http://selenium-hub:4444/wd/hub
-    ports:
-      - "8080:8080"
-
-
+      - CUCUMBER_OPTIONS=--tags @smoke

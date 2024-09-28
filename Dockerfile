@@ -17,4 +17,5 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Command to run tests when the container starts
-CMD ["mvn", "test"]
+CMD ["mvn", "test", "-Dcucumber.options=${CUCUMBER_OPTIONS}"]
+

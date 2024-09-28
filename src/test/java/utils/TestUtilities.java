@@ -33,7 +33,7 @@ public class TestUtilities {
             // Running locally, use EdgeDriver
             try {
                 // Set the path to your local EdgeDriver executable if necessary
-                // System.setProperty("webdriver.edge.driver", "path/to/msedgedriver");
+                 System.setProperty("webdriver.edge.driver", "resources/msedgedriver");
 
                 EdgeOptions options = new EdgeOptions();
                 WebDriver driver = new EdgeDriver(options);
