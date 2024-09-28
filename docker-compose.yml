@@ -5,8 +5,9 @@ services:
     image: selenium/hub:latest
     environment:
       - JAVA_OPTS=-Dotel.javaagent.enabled=false
+      - SE_OPTS=--tracing off
     healthcheck:
-      test: curl -s http://localhost:4444/wd/hub/status | grep '"ready":true' || exit 1
+      test: curl -s http://localhost:4444/status | grep '"ready":true' || exit 1
       interval: 5s
       timeout: 5s
       retries: 12  # Adjust as needed
@@ -23,6 +24,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - JAVA_OPTS=-Dotel.javaagent.enabled=false
+      - SE_OPTS=--tracing off
     volumes:
       - /dev/shm:/dev/shm
 
