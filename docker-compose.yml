@@ -1,10 +1,18 @@
+version: '3.8'
+
 services:
   selenium-hub:
     image: selenium/hub:latest
-    ports:
-      - "4444:4444"
     environment:
       - JAVA_OPTS=-Dotel.javaagent.enabled=false
+    healthcheck:
+      test: curl -s http://localhost:4444/wd/hub/status | grep '"ready":true' || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 12  # Adjust as needed
+    # Remove port mapping since we don't need external access
+    # ports:
+    #   - "4444:4444"
 
   chromium-node:
     image: selenium/node-chromium:latest
@@ -23,7 +31,10 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - selenium-hub
+      selenium-hub:
+        condition: service_healthy
+      chromium-node:
+        condition: service_started
     volumes:
       - .:/app
       - ./target:/app/target

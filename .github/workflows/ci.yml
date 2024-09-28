@@ -26,22 +26,13 @@ jobs:
       - name: Build Docker images
         run: docker compose build
 
-      - name: Start Selenium Hub and Node
-        run: docker compose up -d selenium-hub chromium-node
-
-      - name: Wait for Selenium Hub to be ready
-        run: |
-          until curl -s http://localhost:4444/wd/hub/status | grep '"ready":true'; do
-            echo "Waiting for Selenium Hub to be ready..."
-            sleep 5
-          done
-
-      - name: Run Cucumber Tests - ${{ matrix.test_suite }}
+      - name: Run Docker Compose
         env:
           CUCUMBER_OPTIONS: "--tags @${{ matrix.test_suite }}"
-        run: docker compose run --rm cucumber-test
+        run: |
+          docker compose up --abort-on-container-exit --exit-code-from cucumber-test
 
-      - name: Stop Selenium services
+      - name: Stop Docker Compose
         if: always()
         run: docker compose down
 
