@@ -4,6 +4,8 @@ import components.FilterByStatusComponent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import io.cucumber.java.en.*;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import pages.HomePage;
 import utils.TestUtilities;
 import java.io.IOException;
@@ -11,15 +13,23 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 public class FilterInvoicesStepDefinitionTest {
-    private FilterByStatusComponent filterByStatusComponent;
     private WebDriver driver;
     private HomePage homePage;
+    private FilterByStatusComponent filterByStatusComponent;
 
-    public FilterInvoicesStepDefinitionTest() {
+    @Before
+    public void setUp() {
         this.driver = TestUtilities.setupDriver();
-        this.homePage = new HomePage(driver);  // Initialize HomePage with the driver
+        this.homePage = new HomePage(driver);
+        this.filterByStatusComponent = new FilterByStatusComponent(driver);
     }
 
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
     @Given("the user is on the invoices page")
     public void theUserIsOnTheInvoicesPage() {
         driver.get("https://invoice-app-6rkf.vercel.app/");
@@ -29,7 +39,7 @@ public class FilterInvoicesStepDefinitionTest {
     @When("the user selects {string} from the status filter")
     public void theUserSelectsFromTheStatusFilter(String status) throws IOException {
         filterByStatusComponent.hoverOverFilterByStatus();
-        WebElement checkbox = null;
+        WebElement checkbox;
 
         switch (status) {
             case "Draft":
@@ -52,6 +62,7 @@ public class FilterInvoicesStepDefinitionTest {
     @Then("only {string} invoices are displayed")
     public void onlyInvoicesAreDisplayed(String status) throws IOException {
         List<WebElement> invoices = homePage.getInvoicesByStatus(status);
-        assertTrue("Invoices displayed do not match the filter", invoices.stream().allMatch(invoice -> invoice.getAttribute("data-status").equals(status)));
+        assertTrue("Invoices displayed do not match the filter",
+                invoices.stream().allMatch(invoice -> invoice.getAttribute("data-status").equals(status)));
     }
 }

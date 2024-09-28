@@ -4,14 +4,22 @@ services:
     container_name: selenium_hub
     ports:
       - "4444:4444"
-  
-  edge-node:
-    image: selenium/node-edge:latest
+    environment:
+      - JAVA_OPTS=-Dotel.javaagent.enabled=false
+
+  chromium-node:
+    image: selenium/node-chromium:latest
     depends_on:
       - selenium-hub
     environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+      - JAVA_OPTS=-Dotel.javaagent.enabled=false
+    ports:
+      - "5901:5900"
 
   cucumber-test:
     build:
@@ -24,3 +32,7 @@ services:
       - .:/app
     environment:
       - SELENIUM_REMOTE_URL=http://selenium-hub:4444/wd/hub
+    ports:
+      - "8080:8080"
+
+
