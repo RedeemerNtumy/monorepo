@@ -24,10 +24,10 @@ jobs:
           docker compose version || sudo apt-get install docker-compose
 
       - name: Build Docker images
-        run: docker-compose build
+        run: docker compose build
 
       - name: Start Selenium Hub and Node
-        run: docker-compose up -d selenium-hub chromium-node
+        run: docker compose up -d selenium-hub chromium-node
 
       - name: Wait for Selenium Hub to be ready
         run: |
@@ -39,11 +39,11 @@ jobs:
       - name: Run Cucumber Tests - ${{ matrix.test_suite }}
         env:
           CUCUMBER_OPTIONS: "--tags @${{ matrix.test_suite }}"
-        run: docker-compose run --rm cucumber-test
+        run: docker compose run --rm cucumber-test
 
       - name: Stop Selenium services
         if: always()
-        run: docker-compose down
+        run: docker compose down
 
       - name: Upload Test Reports
         if: always()
