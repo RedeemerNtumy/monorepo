@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test_suite:
+          - smoke
+          - regression
+          - integration
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Compose
+        run: |
+          docker compose version || sudo apt-get install docker-compose
+
+      - name: Build Docker images
+        run: docker-compose build
+
+      - name: Start Selenium Hub and Node
+        run: docker-compose up -d selenium-hub chromium-node
+
+      - name: Wait for Selenium Hub to be ready
+        run: |
+          until curl -s http://localhost:4444/wd/hub/status | grep '"ready":true'; do
+            echo "Waiting for Selenium Hub to be ready..."
+            sleep 5
+          done
+
+      - name: Run Cucumber Tests - ${{ matrix.test_suite }}
+        env:
+          CUCUMBER_OPTIONS: "--tags @${{ matrix.test_suite }}"
+        run: docker-compose run --rm cucumber-test
+
+      - name: Stop Selenium services
+        if: always()
+        run: docker-compose down
+
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-reports-${{ matrix.test_suite }}
+          path: target/cucumber-reports.html

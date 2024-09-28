@@ -14,8 +14,6 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
       - JAVA_OPTS=-Dotel.javaagent.enabled=false
     volumes:
       - /dev/shm:/dev/shm
@@ -28,6 +26,7 @@ services:
       - selenium-hub
     volumes:
       - .:/app
+      - ./target:/app/target
     environment:
       - SELENIUM_REMOTE_URL=http://selenium-hub:4444/wd/hub
-      - CUCUMBER_OPTIONS=--tags @smoke
+      - CUCUMBER_OPTIONS=${CUCUMBER_OPTIONS}
