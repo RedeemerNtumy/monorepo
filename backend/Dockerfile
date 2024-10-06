@@ -16,6 +16,6 @@ COPY .. .
 # Compile and package the application without running tests
 RUN mvn clean install -DskipTests
 
-# Command to run tests when the container start
+# Command to run tests when the container starts
 CMD ["mvn", "test", "-Dcucumber.options=${CUCUMBER_OPTIONS}"]
 
