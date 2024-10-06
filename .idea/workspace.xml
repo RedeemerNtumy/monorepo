@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="444e9f06-0587-4fa8-a749-946b1300b90d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/msedgedriver" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/msedgedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/FilterByStatusComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/InvoiceFormLocators.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DetailsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/EditInvoicePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage_CreateInvoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/NewInvoicePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/FilterInvoicesStepDefinitionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/HoverStatesStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ManageInvoicesStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ResponsiveLayoutStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ToggleModeStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/TestUtilities.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/HoverStates.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ManageInvoices.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/filterInvoices.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/responsiveLayout.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/toggleMode.feature" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2mcBUP8AVZtumhdGAGzZIoPlrkc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Feature: ManageInvoices.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: filterInvoices.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: User creates a new invoice.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoginTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRunner.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.invoice-app-cucumber [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/redeemer/IdeaProjects/skillSpace&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/src/test/java" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="frontend.company" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Feature: ManageInvoices" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ManageInvoices.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="testsskillspace" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: ManageInvoices" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: filterInvoices" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/filterInvoices.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="testsskillspace" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Feature: filterInvoices" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User creates a new invoice" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/ManageInvoices.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="testsskillspace" />
+      <option name="NAME_FILTER" value="^User creates a new invoice$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User creates a new invoice$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User creates a new invoice" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Feature: ManageInvoices" />
+        <item itemvalue="Cucumber Java.Scenario: User creates a new invoice" />
+        <item itemvalue="Cucumber Java.Feature: filterInvoices" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="444e9f06-0587-4fa8-a749-946b1300b90d" name="Changes" comment="" />
+      <created>1727366002747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727366002747</updated>
+      <workItem from="1727366003922" duration="17291000" />
+      <workItem from="1727426915059" duration="17212000" />
+      <workItem from="1727446194093" duration="11782000" />
+      <workItem from="1727467134370" duration="2598000" />
+      <workItem from="1727470902486" duration="5662000" />
+      <workItem from="1727518817145" duration="17224000" />
+      <workItem from="1727542365984" duration="7088000" />
+      <workItem from="1727550160850" duration="610000" />
+      <workItem from="1727691847570" duration="2812000" />
+      <workItem from="1727701482258" duration="1054000" />
+      <workItem from="1727712673762" duration="3516000" />
+      <workItem from="1728031901864" duration="25597000" />
+      <workItem from="1728220564276" duration="1213000" />
+      <workItem from="1728222227795" duration="589000" />
+      <workItem from="1728223259344" duration="56000" />
+      <workItem from="1728223328716" duration="2501000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
