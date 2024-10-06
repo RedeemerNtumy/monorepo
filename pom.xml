@@ -11,10 +11,8 @@
         <module>backend</module>
         <module>tests/ui-tests</module>
     </modules>
-
     <dependencyManagement>
         <dependencies>
-            <!-- Define dependencies common to all modules here -->
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>
@@ -48,7 +46,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Define plugins common to all modules here -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
