@@ -5,37 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="444e9f06-0587-4fa8-a749-946b1300b90d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/msedgedriver" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/msedgedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/FilterByStatusComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/InvoiceFormLocators.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DetailsPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/EditInvoicePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage_CreateInvoice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/NewInvoicePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/FilterInvoicesStepDefinitionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/HoverStatesStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ManageInvoicesStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ResponsiveLayoutStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ToggleModeStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/TestUtilities.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/HoverStates.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ManageInvoices.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/filterInvoices.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/responsiveLayout.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/toggleMode.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/AVG.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/AVG.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COEFFICIENT_OF_VARIATION.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COEFFICIENT_OF_VARIATION.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COLS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COLS.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COUNT.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COUNT.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COUNT_NUMS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COUNT_NUMS.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/MAX.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/MAX.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/MEDIAN.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/MEDIAN.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/MIN.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/MIN.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/ROWS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/ROWS.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/SUM.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/SUM.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/CSV-Groovy.csv.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/CSV-Groovy.csv.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/HTML-Groovy.html.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/HTML-Groovy.html.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/HTML-JavaScript.html.js" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/HTML-JavaScript.html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/JSON-Groovy.json.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/JSON-Groovy.json.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/Markdown-Groovy.md.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/Markdown-Groovy.md.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/One-row.sql.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/One-row.sql.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/Pretty-Groovy.txt.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/Pretty-Groovy.txt.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/SQL-Insert-Multirow.sql.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/SQL-Insert-Multirow.sql.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/SQL-Insert-Statements.sql.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/SQL-Insert-Statements.sql.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/XML-Groovy.xml.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/XML-Groovy.xml.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/loaders/JSON.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/loaders/JSON.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/loaders/XLS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/loaders/XLS.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object by schema and database.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object by schema and database.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object by schema and type.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object by schema and type.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object by schema.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object by schema.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object with order.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object with order.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema/Generate POJOs.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/msedgedriver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ui-tests/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ui-tests/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ui-tests/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ui-tests/src/main/java/pages/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +53,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -63,38 +68,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cucumber Java.Feature: ManageInvoices.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: filterInvoices.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: User creates a new invoice.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestRunner.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.invoice-app-cucumber [test].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/redeemer/IdeaProjects/skillSpace&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Feature: ManageInvoices.executor": "Run",
+    "Cucumber Java.Feature: filterInvoices.executor": "Run",
+    "Cucumber Java.Scenario: User creates a new invoice.executor": "Run",
+    "JUnit.LoginTests.executor": "Run",
+    "JUnit.LoginTests.testLoginWithValidEmailAndPassword.executor": "Run",
+    "JUnit.TestRunner.executor": "Run",
+    "Maven.invoice-app-cucumber [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/redeemer/IdeaProjects/skillSpace/tests/ui-tests/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/ui-tests/resources" />
+      <recent name="$PROJECT_DIR$/tests/ui-tests/src/test/resources" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/src/test/java" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
@@ -102,7 +109,7 @@
       <recent name="frontend.company" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.LoginTests.testLoginWithValidEmailAndPassword">
     <configuration name="Feature: ManageInvoices" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ManageInvoices.feature" />
@@ -162,6 +169,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTests.testLoginWithValidEmailAndPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testsskillspace" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="authentication.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="authentication" />
+      <option name="MAIN_CLASS_NAME" value="authentication.LoginTests" />
+      <option name="METHOD_NAME" value="testLoginWithValidEmailAndPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,6 +198,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginTests.testLoginWithValidEmailAndPassword" />
         <item itemvalue="Cucumber Java.Feature: ManageInvoices" />
         <item itemvalue="Cucumber Java.Scenario: User creates a new invoice" />
         <item itemvalue="Cucumber Java.Feature: filterInvoices" />
@@ -212,7 +236,7 @@
       <workItem from="1728220564276" duration="1213000" />
       <workItem from="1728222227795" duration="589000" />
       <workItem from="1728223259344" duration="56000" />
-      <workItem from="1728223328716" duration="2501000" />
+      <workItem from="1728223328716" duration="4116000" />
     </task>
     <servers />
   </component>

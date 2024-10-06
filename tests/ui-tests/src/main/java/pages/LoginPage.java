@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     private WebDriver driver;
     // Locators
-    private By emailLocator = By.className("email"); //username
+    private By emailLocator = By.id("username"); //username
     private By passwordLocator = By.id("password");
     private By loginButtonLocator = By.cssSelector("button[type='submit']");//"button[type='submit']"
 
