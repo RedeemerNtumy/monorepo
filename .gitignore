@@ -1,2 +1,4 @@
-/extensions
+/extensions/com.intellij.database/schema
+/extensions/com.intellij.database/data
+/extensions/com.intellij.database/schema.layouts
 /.idea
