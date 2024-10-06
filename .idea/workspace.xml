@@ -6,37 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="444e9f06-0587-4fa8-a749-946b1300b90d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/AVG.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/AVG.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COEFFICIENT_OF_VARIATION.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COEFFICIENT_OF_VARIATION.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COLS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COLS.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COUNT.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COUNT.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/COUNT_NUMS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/COUNT_NUMS.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/MAX.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/MAX.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/MEDIAN.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/MEDIAN.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/MIN.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/MIN.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/ROWS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/ROWS.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/aggregators/SUM.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/aggregators/SUM.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/CSV-Groovy.csv.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/CSV-Groovy.csv.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/HTML-Groovy.html.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/HTML-Groovy.html.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/HTML-JavaScript.html.js" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/HTML-JavaScript.html.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/JSON-Groovy.json.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/JSON-Groovy.json.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/Markdown-Groovy.md.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/Markdown-Groovy.md.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/One-row.sql.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/One-row.sql.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/Pretty-Groovy.txt.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/Pretty-Groovy.txt.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/SQL-Insert-Multirow.sql.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/SQL-Insert-Multirow.sql.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/SQL-Insert-Statements.sql.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/SQL-Insert-Statements.sql.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/extractors/XML-Groovy.xml.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/extractors/XML-Groovy.xml.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/loaders/JSON.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/loaders/JSON.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/data/loaders/XLS.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/data/loaders/XLS.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object by schema and database.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object by schema and database.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object by schema and type.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object by schema and type.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object by schema.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object by schema.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object with order.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object with order.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema.layouts/File per object.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema.layouts/File per object.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/extensions/com.intellij.database/schema/Generate POJOs.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/msedgedriver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ui-tests/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ui-tests/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ui-tests/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ui-tests/src/main/java/pages/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +205,7 @@
       <workItem from="1728220564276" duration="1213000" />
       <workItem from="1728222227795" duration="589000" />
       <workItem from="1728223259344" duration="56000" />
-      <workItem from="1728223328716" duration="4116000" />
+      <workItem from="1728223328716" duration="4460000" />
     </task>
     <servers />
   </component>
