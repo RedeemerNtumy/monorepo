@@ -10,6 +10,7 @@
     <modules>
         <module>backend</module>
         <module>tests/ui-tests</module>
+        <module>tests/api-tests</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -27,6 +28,12 @@
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-support</artifactId>
                 <version>4.24.0</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>5.5.0</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>

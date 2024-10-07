@@ -1,0 +1,47 @@
+// orange
+$orange-500: #dd5928;
+$orange-300: #e8906f;
+$orange-100: #f4ccbc;
+$orange-50: #fceeea;
+$orange-50-light: #fffaf8;
+// black
+$dark: #000000;
+$dark-title: #262626;
+
+// white
+$white: #ffffff;
+
+// grey
+$grey: #bfbfbf;
+$grey-50: #595959;
+$grey-placeholder: #999999;
+$grey-100: #6b6b6b;
+
+// error
+$error-red: #d32f2f;
+$error-50: #fbeaea;
+$error-text-color: #593a00;
+
+// warning
+$warning-orange: #ffa500;
+$warning-100: #fff6e6;
+$warning-text-color: var(--$error-text-color);
+
+// success
+$success-green: #388e3c;
+$success-50: #ebf4ec;
+$success-text-color: var(--$error-text-color);
+
+// spacing
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+
+// input
+$input-radius-sm: 4px;
+$input-radius-md: 8px;
+$input-border-color: var(--$grey);
+$input-border-width: 1px;
+
+// button
+$button-border-radius: 8px;
