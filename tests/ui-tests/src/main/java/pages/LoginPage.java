@@ -22,8 +22,9 @@ public class LoginPage {
         driver.findElement(passwordLocator).sendKeys(password);
     }
 
-    public void clickLoginButton() {
+    public ProfilePage clickLoginButton() {
         driver.findElement(loginButtonLocator).click();
+        return new ProfilePage(driver);
     }
 
     public boolean isOnLoginPage() {
