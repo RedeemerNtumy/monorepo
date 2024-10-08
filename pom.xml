@@ -10,6 +10,7 @@
 
     <modules>
         <module>skillspace-backend/program-management-service</module>
+        <module>skillspace-backend/User-Service</module>
         <module>tests/ui-tests</module>
         <module>tests/api-tests</module>
     </modules>

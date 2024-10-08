@@ -56,40 +56,25 @@ public class ProgramCreationTests {
                 .body("coverImageForProgram", equalTo("cover.jpg")).log().all()
                 .extract().response();
     }
-//
-//    @Test
-//    @Order(2)
-//    public void getProgramByIdSuccessTest() {
-//        int programId = 1;
-//        given()
-//                .contentType(ContentType.JSON)
-//                .when()
-//                .get("/" + programId) // Use the created program ID
-//                .then()
-//                .log().body() // Log the response for debugging
-//                .statusCode(200) // Assert that the status code is 200 OK
-//                .contentType(ContentType.JSON) // Assert that the response content type is JSON
-//                .body("id", equalTo(programId)) // Check that the returned program ID matches the requested ID
-//                .body("name", equalTo("Java Bootcamp")) // Check that the name field is correct
-//                .body("description", equalTo("A comprehensive bootcamp for learning Java")) // Check the description field
-//                ;
-//    }
+
+    @Test
+    @Order(2)
+    public void getProgramByIdSuccessTest() {
+        int programId = 1;
+        given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get("/" + programId) // Use the created program ID
+                .then()
+                .log().body() // Log the response for debugging
+                .statusCode(200) // Assert that the status code is 200 OK
+                .contentType(ContentType.JSON) // Assert that the response content type is JSON
+                .body("id", equalTo(programId)) // Check that the returned program ID matches the requested ID
+                .body("name", equalTo("Java Bootcamp")) // Check that the name field is correct
+                .body("description", equalTo("A comprehensive bootcamp for learning Java")) // Check the description field
+                ;
+    }
+
+    }
 
 
-//    @Test
-//    public void getAllProgramsTest() {
-//        // Execute the GET request to retrieve all programs and validate the response
-//        given()
-//                .contentType(ContentType.JSON)
-//                .when()
-//                .get("")
-//                .then().log().body()
-//                .statusCode(200) // Check that the status code is 200 OK
-//                .contentType(ContentType.JSON) // Ensure that the content type is JSON
-//                .body("$", not(empty())) // Check that the response is not an empty list
-//                .body("[0].id", notNullValue()) // Check that the first program has an ID
-//                .body("[0].name", notNullValue()) // Check that the first program has a name
-//                .body("[0].isDraft", equalTo(false)); // Ensure that the first program has `isDraft` set to false
-//    }
-
-}

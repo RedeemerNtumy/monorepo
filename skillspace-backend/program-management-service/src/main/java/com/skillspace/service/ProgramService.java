@@ -5,23 +5,23 @@ import com.skillspace.model.Program;
 import com.skillspace.repository.ChangeLogRepository;
 import com.skillspace.repository.ProgramRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class ProgramService {
-    @Autowired
+
     private ProgramRepository programRepository;
 
-    @Autowired
     private ChangeLogRepository changeLogRepository;
 
     public Program createProgram(Program program) {
-        program.setDraft(true);
+        program.setDraft(false);
         return programRepository.save(program);
     }
 
@@ -95,4 +95,5 @@ public class ProgramService {
         return Optional.empty();
     }
 }
+
 

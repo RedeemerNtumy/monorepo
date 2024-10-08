@@ -2,7 +2,7 @@ package com.skillspace.controller;
 
 import com.skillspace.model.Program;
 import com.skillspace.service.ProgramService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,8 +10,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/programs")
+@AllArgsConstructor
 class ProgramController {
-    @Autowired
+
     private ProgramService programService;
 
     @PostMapping("/create")
@@ -60,3 +61,4 @@ class ProgramController {
                 .orElse(ResponseEntity.notFound().build());
     }
 }
+

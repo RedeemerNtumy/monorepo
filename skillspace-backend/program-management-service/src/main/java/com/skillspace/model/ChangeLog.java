@@ -20,6 +20,5 @@ public class ChangeLog {
     private String changedBy;
     private String changeDescription;
 
-    // Getters and setters
-}
 
+}
