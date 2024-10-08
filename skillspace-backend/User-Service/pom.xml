@@ -10,7 +10,6 @@
 	</parent>
 	<groupId>com.dennis</groupId>
 	<artifactId>user-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>user-service</name>
 	<description>a microservice to handle user registration</description>
 	<url/>

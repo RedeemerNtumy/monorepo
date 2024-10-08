@@ -17,6 +17,15 @@
     <properties>
         <spring-boot.version>3.3.4</spring-boot.version>
     </properties>
+    <profiles>
+        <profile>
+            <id>start-spring-apps</id>
+            <build>
+                <plugins>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 
     <build>
@@ -39,10 +48,21 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
-                    <configuration>
-                        <skip>true</skip>
-                    </configuration>
+                    <version>3.3.4</version>
+                    <executions>
+                        <execution>
+                            <id>pre-integration-test</id>
+                            <goals>
+                                <goal>start</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>post-integration-test</id>
+                            <goals>
+                                <goal>stop</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <!-- Maven Failsafe Plugin to run the integration tests -->
@@ -50,11 +70,15 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>3.0.0-M5</version>
+                    <configuration>
+                        <forkCount>1</forkCount>
+                        <reuseForks>true</reuseForks>
+                    </configuration>
                     <executions>
                         <execution>
                             <goals>
                                 <goal>integration-test</goal>
-                                <goal>verify</goal>
+                                <goal>test</goal>
                             </goals>
                         </execution>
                     </executions>
