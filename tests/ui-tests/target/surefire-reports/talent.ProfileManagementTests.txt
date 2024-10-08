@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: talent.ProfileManagementTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.853 s <<< FAILURE! -- in talent.ProfileManagementTests
+talent.ProfileManagementTests.testProfileInformationEntry -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "pages.ProfilePage.enterInstitutionName(String)" because "talent.ProfileManagementTests.profilePage" is null
+	at talent.ProfileManagementTests.testProfileInformationEntry(ProfileManagementTests.java:45)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
