@@ -35,7 +35,7 @@ jobs:
       - name: Run API Tests
         run: mvn -pl :api-tests clean test
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://github.com/postgres/program-creation
+          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/program-creation
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: postgres
 
