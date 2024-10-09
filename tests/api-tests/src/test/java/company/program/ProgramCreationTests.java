@@ -3,14 +3,12 @@ package company.program;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ProgramCreationTests {
 
     @BeforeAll
