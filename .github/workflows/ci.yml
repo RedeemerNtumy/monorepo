@@ -86,10 +86,5 @@ jobs:
       - name: Start Microservice
         run: mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21
 
-      - name: Wait for Microservice to be Ready
-        run: |
-          # Add a sleep command or a health check if necessary
-          sleep 30
-
       - name: Run API Tests
         run: mvn -pl :api-tests -am clean test
