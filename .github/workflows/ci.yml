@@ -81,7 +81,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
-          java-version: '11'
+          java-version: '21'
 
       - name: Start Microservice
         run: mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21
