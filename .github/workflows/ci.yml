@@ -1,49 +1,96 @@
-name: Sync Backend to QA Repository
+#name: Sync Backend to QA Repository
+#
+#on:
+#  push:
+#    branches:
+#      - qa-repo
+#jobs:
+#  sync-to-qa:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      # Step 1: Checkout the backend repository (assuming this is set up in the frontend repository's workflow)
+#      - name: Checkout Backend Repository
+#        uses: actions/checkout@v3
+#        with:
+#          repository: AmaliTech-Training-Academy/skillspace-backend  # Replace with your frontend repository name
+#          ref: dev  # Use the branch you want to pull changes from
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#
+#      # Step 2: Clone the QA repository
+#      - name: Clone QA Repository
+#        env:
+#          QA_REPO_PAT: ${{ secrets.QA_REPO_PAT }}  # Use your Personal Access Token secret
+#        run: |
+#          git clone https://${{ secrets.QA_REPO_PAT }}@github.com/AmaliTech-Training-Academy/skillspace-qa.git skillspace-backend
+#          cd skillspace-backend
+#
+#      # Step 3: Create or clean the skillspace-backend folder inside the QA repository
+#      - name: Prepare `skillspace-backend` Folder in QA Repository
+#        run: |
+#          rm -rf skillspace-backend/*
+#          mkdir -p skillspace-backend
+#
+#
+#      # Step 4: Copy frontend code into the `skillspace-backend` folder of the QA repository
+#      - name: Copy Frontend to skillspace-backend Folder
+#        run: |
+#          rsync -av --exclude='.git' ./ skillspace-backend/
+#
+#      # Step 5: Commit and push the changes to the QA repository
+#      - name: Commit and Push Changes to QA
+#        working-directory: skillspace-backend
+#        run: |
+#          git config --global user.name "github-actions[bot]"
+#          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+#          git add .
+#          git commit -m "Sync frontend changes to skillspace-backend folder"
+#          git push origin main
+name: CI Pipeline
 
 on:
   push:
     branches:
-      - qa-repo  # Trigger this workflow when changes are pushed to the `main` branch
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  sync-to-qa:
+  setup:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: program-creation
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
-      # Step 1: Checkout the backend repository (assuming this is set up in the frontend repository's workflow)
-      - name: Checkout Backend Repository
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
         with:
-          repository: AmaliTech-Training-Academy/skillspace-backend  # Replace with your frontend repository name
-          ref: dev  # Use the branch you want to pull changes from
-          token: ${{ secrets.GITHUB_TOKEN }}
+          distribution: 'adopt'
+          java-version: '11'
 
-      # Step 2: Clone the QA repository
-      - name: Clone QA Repository
-        env:
-          QA_REPO_PAT: ${{ secrets.QA_REPO_PAT }}  # Use your Personal Access Token secret
-        run: |
-          git clone https://${{ secrets.QA_REPO_PAT }}@github.com/AmaliTech-Training-Academy/skillspace-qa.git skillspace-backend 
-          cd skillspace-backend
+      - name: Start Microservice
+        run: mvn -f skillspace-backend/program-management-service/pom.xml spring-boot-run
 
-      # Step 3: Create or clean the skillspace-backend folder inside the QA repository
-      - name: Prepare `skillspace-backend` Folder in QA Repository
+      - name: Wait for Microservice to be Ready
         run: |
-          rm -rf skillspace-backend/*
-          mkdir -p skillspace-backend
-          
+          # Add a sleep command or a health check if necessary
+          sleep 30
 
-      # Step 4: Copy frontend code into the `skillspace-backend` folder of the QA repository
-      - name: Copy Frontend to skillspace-backend Folder
-        run: |
-          rsync -av --exclude='.git' ./ skillspace-backend/
-
-      # Step 5: Commit and push the changes to the QA repository
-      - name: Commit and Push Changes to QA
-        working-directory: skillspace-backend
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Sync frontend changes to skillspace-backend folder"
-          git push origin main 
+      - name: Run API Tests
+        run: mvn -pl :api-tests -am clean test
