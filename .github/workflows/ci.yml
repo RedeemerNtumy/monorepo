@@ -84,7 +84,7 @@ jobs:
           java-version: '21'
 
       - name: Start Microservice
-        run: nohup mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21 & sleep 20
+        run: nohup mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21
 
       - name: Run API Tests
         run: mvn -pl :api-tests -am clean test
