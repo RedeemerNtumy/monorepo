@@ -73,6 +73,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -84,7 +85,18 @@ jobs:
           java-version: '21'
 
       - name: Start Microservice
-        run: nohup mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21
+        run: nohup mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21 &
+
+      - name: Wait for Microservice to be Ready
+        run: |
+          echo "Waiting for the application to be ready..."
+          # Replace 'localhost:8888' with your microservice URL and port
+          until curl --silent --fail http://localhost:8888/actuator/health; do
+            echo 'Waiting for the microservice...'
+            sleep 10
+          done
+          echo "Microservice is up and running!"
 
       - name: Run API Tests
         run: mvn -pl :api-tests -am clean test
+
