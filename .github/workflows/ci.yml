@@ -85,7 +85,7 @@ jobs:
           java-version: '11'
 
       - name: Start Microservice
-        run: mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run
+        run: mvn -f skillspace-backend/program-management-service/pom.xml spring-boot:run -Djava.version=21
 
       - name: Wait for Microservice to be Ready
         run: |
