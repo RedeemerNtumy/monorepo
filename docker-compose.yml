@@ -12,6 +12,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - app-network
+    depends_on:
+      - eureka-server
 
   # Service 2 - Authentication Service
   authentication-service:
@@ -24,6 +26,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - app-network
+    depends_on:
+      - eureka-server
 
   # Service 3 - Email Service
   email-service:
@@ -36,6 +40,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - app-network
+    depends_on:
+      - eureka-server
 
   # Service 4 - Eureka Server
   eureka-server:
@@ -63,6 +69,8 @@ services:
       - SPRING_DATASOURCE_PASSWORD=postgres
     networks:
       - app-network
+    depends_on:
+      - eureka-server
 
   # RabbitMQ Service
   rabbitmq:
@@ -75,6 +83,8 @@ services:
       RABBITMQ_DEFAULT_PASS: guest
     networks:
       - app-network
+    depends_on:
+      - eureka-server
 
   # PostgreSQL Database
   db:
@@ -89,6 +99,8 @@ services:
       - app-network
     volumes:
       - db_data:/var/lib/postgresql/data
+    depends_on:
+      - eureka-server
 
 networks:
   app-network:
