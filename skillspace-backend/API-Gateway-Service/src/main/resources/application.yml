@@ -1,0 +1,21 @@
+spring:
+ cloud:
+   gateway:
+     routes:
+       - id: user-service
+         uri: lb://USER-SERVICE
+         predicates:
+           - Path=/api/users/**
+
+       - id: authentication-service
+         uri: lb://AUTHENTICATION-SERVICE
+         predicates:
+           - Path=/auth/**
+
+ application:
+   name: API-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://eureka-server-1:8761/eureka/

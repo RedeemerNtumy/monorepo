@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  # Service 1 - API Gateway
+  api-gateway-service:
+    build:
+      context: ./skillspace-backend/API-Gateway-Service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - app-network
+
+  # Service 2 - Authentication Service
+  authentication-service:
+    build:
+      context: ./skillspace-backend/Authentication-Service
+      dockerfile: Dockerfile
+    ports:
+      - "9898:9898"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - app-network
+
+  # Service 3 - Email Service
+  email-service:
+    build:
+      context: ./skillspace-backend/Email-Service
+      dockerfile: Dockerfile
+    ports:
+      - "1818:1818"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - app-network
+
+  # Service 4 - Eureka Server
+  eureka-server:
+    build:
+      context: ./skillspace-backend/Eureka-Service
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - app-network
+
+  # Service 5 - User Service (formerly Config Server)
+  user-service:
+    build:
+      context: ./skillspace-backend/User-Service
+      dockerfile: Dockerfile
+    ports:
+      - "8989:8989"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/user-service
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    networks:
+      - app-network
+
+  # RabbitMQ Service
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"   # RabbitMQ message broker port
+      - "15672:15672" # RabbitMQ management console port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - app-network
+
+  # PostgreSQL Database
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: user-service
+    ports:
+      - "5431:5432"
+    networks:
+      - app-network
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:

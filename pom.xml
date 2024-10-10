@@ -12,6 +12,10 @@
         <module>skillspace-backend/program-management-service</module>
         <module>skillspace-backend/assesment-Service</module>
         <module>skillspace-backend/User-Service</module>
+        <module>skillspace-backend/API-Gateway-Service</module>
+        <module>skillspace-backend/Authentication-Service</module>
+        <module>skillspace-backend/Email-Service</module>
+        <module>skillspace-backend/Eureka-Service</module>
         <module>tests/ui-tests</module>
         <module>tests/api-tests</module>
 

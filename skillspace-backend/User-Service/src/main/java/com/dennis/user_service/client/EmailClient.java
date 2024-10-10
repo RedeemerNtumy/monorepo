@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class EmailClient {
+public class
+EmailClient {
 
     private final String URL = "http://EMAIL-SERVICE/api/email";
     @Autowired

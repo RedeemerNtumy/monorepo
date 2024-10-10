@@ -1,14 +1,15 @@
 package com.dennis.user_service.service;
 
 import com.dennis.user_service.client.EmailClient;
+import com.dennis.user_service.config.RabbitConfig;
 import com.dennis.user_service.dto.*;
-import com.dennis.user_service.model.CompanyProfile;
-import com.dennis.user_service.model.Role;
-import com.dennis.user_service.model.Status;
-import com.dennis.user_service.model.User;
+import com.dennis.user_service.model.*;
 import com.dennis.user_service.repository.CompanyProfileRepository;
 import com.dennis.user_service.repository.UserRepository;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,9 @@ public class UserService {
     @Autowired
     EmailClient emailClient;
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     public User registerUser(UserRegistrationRequest request) {
         User user = new User();
         user.setName(request.getName());
@@ -42,17 +46,36 @@ public class UserService {
         user.setRole(request.getRole());
         user.setStatus(Status.INACTIVE);
 
+//        // Generate OTP
+//        String otp = generateOtp();
+//        user.setOtp(otp);
+//        user.setOtpExpiration(LocalDateTime.now().plusMinutes(10));
+//
+//        // Send OTP email
+//        Email emailMessage = new Email(user.getEmail(), "Confirmation OTP", otp);
+//        rabbitTemplate.convertAndSend(RabbitConfig.EMAIL_QUEUE, emailMessage);
+//        //emailClient.sendOtp(user.getEmail(), otp);
+
+        generateAndSendOtp(user);
+
+        //userRepository.save(user);
+
+        return user;
+    }
+
+    public void generateAndSendOtp(User user){
+
         // Generate OTP
         String otp = generateOtp();
         user.setOtp(otp);
         user.setOtpExpiration(LocalDateTime.now().plusMinutes(10));
 
+        // Send OTP email
+        Email emailMessage = new Email(user.getEmail(), "Confirmation OTP", otp);
+        rabbitTemplate.convertAndSend(RabbitConfig.EMAIL_QUEUE, emailMessage);
+
         userRepository.save(user);
 
-        // Send OTP email
-        emailClient.sendOtp(user.getEmail(), otp);
-
-        return user;
     }
 
     public CompanyProfile registerCompany(CompanyRegistrationRequest request) throws IOException {
@@ -152,7 +175,7 @@ public class UserService {
             // Send notification
             String email = companyOptional.get().getEmail();
             if (request.getStatus() == Status.APPROVED) {
-                emailClient.sendApprovalEmail(email);
+                emailClient.sendApprovalEmail(email); //replace with rabbit template
             } else {
                 emailClient.sendRejectionEmail(email);
             }
@@ -172,6 +195,34 @@ public class UserService {
 
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    public void resetPassword(ChangePassRequest request) {
+        Optional<User> user = userRepository.findByEmail(request.getEmail());
+        if (user.isPresent()) {
+            user.get().setPassword(hashPassword(request.getNewPassword()));
+            userRepository.save(user.get());
+        }else{
+            System.out.println("user is not in system"); //implement an exception
+        }
+    }
+
+    public boolean confirmPasswordResetOtp(String email, String otp) {
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            if (user.getOtp().equals(otp) && user.getOtpExpiration().isAfter(LocalDateTime.now())) {
+                user.setOtp(null);  // Clear OTP
+                user.setOtpExpiration(null);
+                userRepository.save(user);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Optional<Role> findRoleByEmail(String email) {
+        return userRepository.findRoleByEmail(email);
     }
 }
 

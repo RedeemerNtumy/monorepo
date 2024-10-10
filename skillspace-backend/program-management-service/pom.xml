@@ -6,7 +6,8 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.4</version>
-		<relativePath>../../pom.xml</relativePath>
+		<relativePath>.././.././pom.xml</relativePath>
+
 	</parent>
 	<groupId>com.skillspace</groupId>
 	<artifactId>program-management-service</artifactId>
