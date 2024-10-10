@@ -1,0 +1,37 @@
+@use '../../../../stylesheet/typography' as *;
+@use '../../../../stylesheet/variables' as *;
+
+section {
+  margin-inline: 1.25rem;
+  nav {
+    width: 100% !important;
+    display: flex;
+    ul {
+      display: flex;
+      gap: 1rem;
+
+      li {
+        font-family: $btn-font;
+        list-style-type: none;
+        color: #6B6B6B;
+        cursor: pointer;
+        padding: 0 1rem .75rem 1rem;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom-color 0.3s ease;
+
+        &:hover {
+          color: darken(#6B6B6B, 10%);
+        }
+
+        &.active {
+          font-weight: 700;
+          border-bottom-color: $orange-500;
+        }
+      }
+    }
+  }
+
+  mat-divider{
+    margin-top: -.125rem;
+  }
+}

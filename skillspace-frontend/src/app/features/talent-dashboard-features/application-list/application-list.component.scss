@@ -1,0 +1,52 @@
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+.container{
+    @include flexbox(column);
+    gap: 3rem;
+    margin: 0 4rem;
+    .program-card{
+        .card-content{
+            @include flexbox;
+            justify-content: space-between;
+            .left-info{
+                @include flexbox;
+                .company-logo{
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                }
+                .info{
+                    @include flexbox(column, space-between);
+                    margin-left: 3.5rem;
+                    p{
+                       @include flexbox;
+                       gap:1rem;
+                    }
+                }
+            }
+        }
+        .btn{
+            @include button-style();
+            width: fit-content;
+            padding-left: 3.2rem;
+            padding-right: 3.2rem;
+            margin-left: auto;
+        }
+    }
+    .status{
+        height: fit-content;
+        padding: 0.2rem 1rem;
+        border-radius: 1.5rem;
+        font-size: 1.3rem;
+    }
+    .available{
+        background-color: $success-green;
+        color:$white;
+    }
+    .closed{
+        background-color: $error-red;
+        color:$white;
+    }
+}

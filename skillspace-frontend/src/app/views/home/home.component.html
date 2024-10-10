@@ -1,0 +1,19 @@
+  <div class="main-dashboard-container">
+    <mat-drawer-container class="mat-container" hasBackdrop="false">
+      <mat-drawer
+        #drawer
+        [opened]="'opened'"
+        mode="side"
+        opened="true"
+      >
+        <app-sidebar/>
+      </mat-drawer>
+      <mat-drawer-content class="content-container">
+        <app-header/>
+            <div class="routes">
+              <router-outlet/>
+            </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+  

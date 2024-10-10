@@ -1,0 +1,70 @@
+@use '../../../../stylesheet/variables' as *;
+@use '../../../../stylesheet/mixins' as *;
+.container{
+    margin: 2.4rem;
+    .program-description{
+        margin:0.8rem 0 3.3rem;
+    }
+    .program-overview{
+        line-height: 3rem;
+    }
+    .strong{
+        margin: 3rem 0 1.5rem;
+        font-size: 1.6rem;
+        color: black;
+        font-weight: 500;
+    }
+}
+p{
+    font-size: 1.3rem;
+    color: $grey-lighter;
+}
+ul{
+    margin-top: 3.3rem;
+    li{
+        color: $grey-lighter;
+        margin-left: 3rem;
+    }
+    .gaps{
+        @include flexbox(column);
+        gap: 2rem;
+    }
+}
+.btn{
+    @include button-style($white,$orange-500);
+    width: fit-content;
+    padding: 1.8rem 3.2rem;
+    margin-top: 3.3rem;
+}
+.row{
+    @include flexbox(row, space-between, center);
+    margin-bottom: 3.3rem;
+    .company{
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+    }
+    .company-logo{
+        padding: 1rem;
+        border:1px solid $orange-50;
+        border-radius: 50%;
+    }
+    .status{
+        height: fit-content;
+        margin-left: auto;
+        font-size: 13px;
+        padding: 0.2rem 1rem;
+        border-radius: 1.5rem;
+    }
+    .available{
+        background-color: $success-green;
+        color:$white;
+    }
+    .closed{
+        background-color: $error-red;
+        color:$white;
+    }
+    .badge-chips{
+        @include flexbox;
+    }
+}

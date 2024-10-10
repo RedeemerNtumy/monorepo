@@ -1,5 +1,6 @@
 package com.skillspace.controller;
 
+import com.skillspace.model.ChangeLog;
 import com.skillspace.model.Program;
 import com.skillspace.service.ProgramService;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,15 @@ class ProgramController {
         return programService.getAllPrograms();
     }
 
+    @GetMapping("/changelogs")
+    public ResponseEntity<List<ChangeLog>> getAllChangeLogs() {
+        List<ChangeLog> changeLogs = programService.getAllChangeLogs();
+        if (changeLogs.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(changeLogs);
+    }
+
     @GetMapping("/drafts")
     public List<Program> getAllDrafts() {
         return programService.getAllDrafts();
@@ -38,9 +48,20 @@ class ProgramController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/{programId}/changelogs")
+    public ResponseEntity<List<ChangeLog>> getProgramChangeLogs(@PathVariable Long programId) {
+        List<ChangeLog> changeLogs = programService.getProgramChangeLogs(programId);
+        if (changeLogs.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(changeLogs);
+    }
+
     @PutMapping("/{programId}")
-    public ResponseEntity<Program> updateProgram(@PathVariable Long programId, @RequestBody Program programDetails) {
-        return programService.updateProgram(programId, programDetails)
+    public ResponseEntity<Program> updateProgram(@PathVariable Long programId,
+                                                 @RequestBody Program programDetails,
+                                                 @RequestParam String updatedBy) {
+        return programService.updateProgram(programId, programDetails, updatedBy)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -55,8 +76,11 @@ class ProgramController {
     }
 
     @PostMapping("/{programId}/publish")
-    public ResponseEntity<Program> publishProgram(@PathVariable Long programId) {
-        return programService.publishProgram(programId)
+    public ResponseEntity<Program> publishProgram(
+            @PathVariable Long programId,
+            @RequestParam String publishedBy) {
+
+        return programService.publishProgram(programId, publishedBy)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

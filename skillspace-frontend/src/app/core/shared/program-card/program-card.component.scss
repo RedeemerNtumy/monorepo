@@ -1,0 +1,12 @@
+@use '../../../../stylesheet/mixins' as *;
+
+.program-card{
+  @include programsCardStyles;
+
+  .card-info{
+    @include flexbox($direction:column);
+    gap: .375rem;
+  }
+}
+
+

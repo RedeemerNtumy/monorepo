@@ -1,0 +1,18 @@
+@use '../../../stylesheet/variables'  as *;
+@use '../../../stylesheet/mixins'  as *;
+
+.main-dashboard-container{
+    @include flexbox(column);
+    height: 100%;
+    mat-drawer{
+        border: none;
+    }
+    .mat-container{
+        width: 100%;
+        height: 100%;
+        background-color: $orange-50-light;
+    }
+    .routes{
+        margin: 1rem 3.2rem;
+    }
+}

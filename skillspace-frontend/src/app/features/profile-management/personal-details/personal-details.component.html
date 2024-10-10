@@ -1,0 +1,205 @@
+<form [formGroup]="PersonalDetails" class="form-div">
+  <div class="form">
+    <div class="form__col-1">
+      <!-- Profile Picture Section -->
+      <div class="form-group-div">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Profile Picture</h5>
+            <p>This is what will be displayed on your profile.</p>
+          </div>
+          <div class="form-group__col-2 picture">
+            <div class="img-div">
+              <img src="assets/images/image-upload.png" alt="Profile Picture" />
+            </div>
+            <div>
+              <p><span>Click here or drag</span> your files to upload</p>
+              <p>Supported formats: PNG, JPG, JPEG (10mb max)</p>
+            </div>
+            <input type="file" formControlName="profilePicture" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Display Name Section -->
+      <div class="form-group-div">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Display Name</h5>
+            <p>This is what employers will see on your profile.</p>
+          </div>
+          <div class="form-group__col-2 name">
+            <app-cva
+              label="First Name"
+              formControlName="firstName"
+              class="name"
+            />
+            <app-cva
+              label="Last Name"
+              formControlName="lastName"
+              class="name"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Introduction Section -->
+      <div class="form-group-div">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Introduction</h5>
+            <p>Showcase your strengths, skills, and experience.</p>
+          </div>
+          <div class="form-group__col-2 introduction">
+            <textarea
+              formControlName="introduction"
+              placeholder="Write about yourself"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload CV Section -->
+      <div class="form-group-div">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Upload your C.V</h5>
+            <p>You can upload up to 1 document.</p>
+          </div>
+          <div class="form-group__col-2 picture">
+            <div class="img-div">
+              <img src="assets/images/image-upload.png" alt="Profile Picture" />
+            </div>
+            <div>
+              <p><span>Click here or drag</span> your files to upload</p>
+              <p>Supported formats: PNG, JPG, JPEG (10mb max)</p>
+            </div>
+            <input type="file" formControlName="profilePicture" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form__col-1">
+      <!-- Date of Birth -->
+      <div class="form-group-div right">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Date of Birth</h5>
+            <p>This is set to private. Only you see this.</p>
+          </div>
+          <div class="form-group__col-2 date">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" formControlName="dob" />
+              <mat-datepicker-toggle
+                matIconPrefix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nationality -->
+      <div class="form-group-div right">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Nationality</h5>
+            <p>The country where you claim your citizenship.</p>
+          </div>
+          <div class="form-group__col-2 nationality">
+            <mat-form-field>
+              <mat-select formControlName="nationality">
+                <mat-option value="Ghana">Ghana</mat-option>
+                <mat-option value="Uganda">Uganda</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="city">
+              <h5>Current Location</h5>
+              <p>Enter your current city/town.</p>
+
+              <app-cva formControlName="location" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Location -->
+
+      <!-- Phone Number -->
+      <div class="form-group-div right">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Phone Number</h5>
+            <p>This is set to private. Only you see this.</p>
+          </div>
+          <div class="form-group__col-2 phone">
+            <app-cva formControlName="phone" class="input" />
+            <div class="checkbox">
+              <label> <app-custom-check-box /> Public </label>
+              <label> <app-custom-check-box /> Private </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media Pages (Dynamic) -->
+      <div class="form-group-div right">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Social Media Pages</h5>
+          </div>
+          <div class="form-group__col-2 social">
+            <div formArrayName="socialMedia" class="socialMedia">
+              <div
+                *ngFor="let control of socialMedia.controls; let i = index"
+                class="field"
+              >
+                <input [formControlName]="i" placeholder="Social Media Link" />
+                <button (click)="removeSocialMedia(i)" class="remove">
+                  <img src="assets/images/remove.svg" alt="remove icon" />
+                </button>
+              </div>
+            </div>
+            <button (click)="addSocialMedia()" class="add">
+              <img src="assets/images/add.svg" alt="add icon" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Links (Dynamic) -->
+      <div class="form-group-div right">
+        <div class="form-group">
+          <div class="form-group__col-1">
+            <h5>Portfolio Links</h5>
+          </div>
+          <div class="form-group__col-2 social">
+            <div formArrayName="portfolioLinks" class="socialMedia">
+              <div
+                *ngFor="let control of portfolioLinks.controls; let i = index"
+                class="field"
+              >
+                <input [formControlName]="i" placeholder="Portfolio Link" />
+                <button (click)="removePortfolioLink(i)" class="remove">
+                  <img src="assets/images/remove.svg" alt="remove icon" />
+                </button>
+              </div>
+            </div>
+            <button (click)="addPortfolioLink()" class="add">
+              <img src="assets/images/add.svg" alt="add icon" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-div">
+    <button class="btn submit" type="submit" [disabled]="PersonalDetails.invalid">Save changes</button>
+    <button class="btn cancel" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

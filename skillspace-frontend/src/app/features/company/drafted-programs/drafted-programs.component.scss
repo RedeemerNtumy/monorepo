@@ -1,0 +1,14 @@
+@use '../../../../stylesheet/mixins' as *;
+
+section{
+  padding: 1.25rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  margin-top: 2.625rem;
+  
+  .drafts{
+    @include flexbox($direction: column);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}

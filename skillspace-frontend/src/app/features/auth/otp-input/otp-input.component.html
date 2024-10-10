@@ -1,0 +1,15 @@
+<div class="input-otp-grp" (paste)="onPaste($event)">
+  <ng-container *ngFor="let _ of [0,1,2,3,4]; let i = index">
+    <input
+      #otpInput
+      type="text"
+      [value]="otpForm.get('otp')?.value[i] || ''"
+      (input)="onInput($event, i)"
+      (keydown)="onKeyDown($event, i)"
+      placeholder="*"
+      [class]="isInvalid ? 'error' : ''"
+      maxlength="1"
+      inputmode="numeric"
+      pattern="[0-9]*">
+  </ng-container>
+</div>

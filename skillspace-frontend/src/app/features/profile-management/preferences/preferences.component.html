@@ -1,0 +1,54 @@
+<div class="preference-div">
+  <div class="preference">
+    <div class="text">
+      <h5>Notifications</h5>
+      <p>Choose how you recieve notifications</p>
+    </div>
+    <div class="email-preference">
+      <div class="text">
+        <h5>Communication emails</h5>
+        <p>Recieve emails about your account activities</p>
+      </div>
+
+      <div class="toggle-container">
+        <input type="checkbox" id="toggle" class="toggle-checkbox" />
+        <label for="toggle" class="toggle-label"></label>
+      </div>
+    </div>
+    <div class="custom-checkbox-group">
+      <label
+        ><input type="checkbox" class="custom-checkbox" />All new
+        messages</label
+      >
+      <label
+        ><input type="checkbox" class="custom-checkbox" />Application status
+        change</label
+      >
+      <label
+        ><input type="checkbox" class="custom-checkbox" />All new
+        messages</label
+      >
+    </div>
+  </div>
+  <div class="preference">
+    <div class="text">
+      <h5>Availability</h5>
+      <p>Let employers know if you are available for a new role.</p>
+    </div>
+    <div class="status">
+      <div class="availability">
+        <span [class]="availability ? 'available' : ''"></span>
+        Available
+      </div>
+      <div class="toggle-availability">
+        <input
+          type="checkbox"
+          id="toggle-availability"
+          class="toggle-checkbox"
+          (click)="onToggleAvailability()"
+        />
+        <label for="toggle-availability" class="toggle-label"></label>
+      </div>
+    </div>
+  </div>
+</div>

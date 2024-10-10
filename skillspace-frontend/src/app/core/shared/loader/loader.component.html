@@ -1,0 +1,17 @@
+<button
+    [disabled]="isLoading"
+    [class]="buttonClass"
+    (click)="onClick()"
+  >
+  <ng-container *ngIf="!isLoading">
+    <ng-content></ng-content>
+  </ng-container>
+  <ng-container *ngIf="isLoading" class="loading-container">
+    <p-progressSpinner
+      [style]="{width: '20px', height: '20px'}"
+      styleClass="custom-spinner"
+      strokeWidth="4"
+    ></p-progressSpinner>
+    <span class="loading-text">{{ loadingText }}</span>
+  </ng-container>
+</button>

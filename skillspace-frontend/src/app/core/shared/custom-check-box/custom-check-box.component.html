@@ -1,0 +1,6 @@
+<div (click)="toggleCheck()" class="checkbox-container">
+    <span class="checkbox" [class]="value? 'checked-border':'unchecked-border'">
+        <span [class]="value? 'check':''"></span>
+    </span>
+    <span class="text">{{text}}</span>
+</div>

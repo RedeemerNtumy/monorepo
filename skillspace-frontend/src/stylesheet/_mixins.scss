@@ -1,3 +1,7 @@
+@use 'variables' as *;
+@use 'typography' as *;
+
+
 @mixin flexbox(
   $direction: row,
   $justify: flex-start,
@@ -9,4 +13,105 @@
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
+}
+
+@mixin button-style($color:$orange-500, $bg-color:transparent){
+  width: 100%;
+  border-radius: .8rem;
+  height: 5.5rem;
+  border: 1px solid $grey;
+  background-color:  $bg-color;
+  color: $color;
+  cursor: pointer;
+  font-family: $btn-font;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+}
+
+@mixin divider-with-text {
+  display: flex;
+  align-items: center;
+  margin: 1.1rem 0 0 0 !important;
+
+  mat-divider {
+    flex-grow: 1;
+    border-top-color: $divider-color;
+  }
+
+  span {
+    padding: 0 1.6rem;
+    color: $divider-txt-color;
+    font-size: 1.6rem;
+    font-family: $poppins;
+  }
+}
+
+
+@mixin link-effect($color: #DD5928, $height: 0.7px, $transition: 0.5s) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: $height;
+    background: $color;
+    transform: scaleX(0);
+    transition: transform $transition ease;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+@mixin pop-in-animation {
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.7) translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+}
+
+@mixin programsCardStyles {
+  border-radius: .5rem;
+  padding: 2.0938rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FCEEEA;
+  height: 9.25rem !important;
+
+  .card-actions {
+    display: flex;
+    gap: 1rem !important;
+    list-style: none;
+
+    li{
+      cursor: pointer;
+    }
+
+    img {
+      width: 1.5rem;
+      margin-right: .1875rem;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@mixin labelStyle{
+  font-size: 1.6rem;
+  font-family: $btn-font;
 }

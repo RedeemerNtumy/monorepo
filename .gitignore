@@ -1,3 +1,4 @@
 /extensions/com.intellij.database/
 
 /.idea
+/skillspace-frontend/node_modules

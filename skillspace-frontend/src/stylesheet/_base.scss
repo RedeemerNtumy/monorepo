@@ -1,3 +1,5 @@
+@use "typography" as *;
+
 *,
 *::after,
 *::before {
@@ -12,6 +14,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: $btn-font;
 }
 
 img {

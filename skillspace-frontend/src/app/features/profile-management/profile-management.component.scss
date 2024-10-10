@@ -1,0 +1,7 @@
+mat-tab-group {
+  padding: 3.2rem;
+
+  ::ng-deep ::ng-deep .mat-tab-body-wrapper {
+    margin-top: 20px;
+  }
+}

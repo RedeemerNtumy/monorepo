@@ -1,0 +1,42 @@
+
+<main>
+  <div>
+    <h3>Verification Code</h3>
+    <p class="verification-subtitle">
+      Enter the verification code that we have sent,
+      kindly check and enter here.
+    </p>
+    <section class="otp-grp">
+      @if(isSuccess) {
+        <app-toast
+          *ngIf="showToast"
+          [message]="toastMessage"
+          [toastType]="'success'"
+          [duration]="5000"
+        ></app-toast>
+      } @else {
+        <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
+          <app-otp-input
+            [otpForm]="otpForm"
+            (otpChanged)="onOtpChanged($event)"
+            [isInvalid]="isOtpInvalid"
+          ></app-otp-input>
+          @if(isExpired) {
+            <p class="verify-expires-txt" (click)="requestNewCode()">Code expired. <a class="verify-expires-txt new-req">{{ formatCountdown()}}</a></p>
+          } @else {
+            <p class="verify-expires-txt">Code expires in <span class="verify-expd-txt">{{ formatCountdown() }}</span></p>
+          }
+          <app-toast
+            *ngIf="showToast"
+            [message]="toastMessage"
+            [toastType]="toastType"
+            [duration]="5000"
+          ></app-toast>
+          <button type="submit" class="verify-btn" [disabled]="isExpired" [class]="isExpired ? 'expired':''">
+            Verify
+          </button>
+        </form>
+      }
+    </section>
+  </div>
+</main>

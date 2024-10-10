@@ -1,0 +1,46 @@
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+
+.button {
+  margin-top: 2rem;
+  @include button-style($bg-color:$orange-500, $color: #fff);
+  border: none;
+  min-height: 4rem;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loading-text {
+    margin-left: .8rem;
+    font-size: 1.5rem;
+  }
+}
+
+
+:host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+  stroke: #ffffff;
+  animation: custom-progress-spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes custom-progress-spinner-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

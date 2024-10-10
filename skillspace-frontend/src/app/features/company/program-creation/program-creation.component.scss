@@ -1,0 +1,125 @@
+@use '../../../../stylesheet/typography' as *;
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+
+section {
+  padding: 1.25rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  margin-top: 2.625rem;
+  form {
+    max-height: 52rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .input-grp{
+      color: #333333;
+      @include flexbox($direction: column);
+      label {
+        @include labelStyle;
+      }
+      input {
+        margin-top: 0.625rem;
+        height: 4.5rem;
+        border-radius: 0.4rem;
+        border: 1px solid #bfbfbf;
+        padding: 1rem;
+        font-size: 1.6rem;
+
+        &::placeholder {
+          color: #bfbfbf;
+        }
+        &:focus {
+          border: 1px solid darken(#bfbfbf, 15%);
+          outline: none;
+        }
+
+        &.password-error {
+          border: 1px solid #d32f2f;
+        }
+      }
+    }
+
+
+    .textarea {
+      label {
+        @include labelStyle;
+      }
+      display: flex;
+      flex-direction: column;
+
+      textarea {
+        flex: 1;
+        border-radius: .25rem;
+        margin-top: 1rem;
+        padding: .75rem  0  .75rem .75rem;
+        font-size: 1.6rem;
+        width: 100%;
+        height: calc(158/16)rem;
+        border: 1px solid #BFBFBF;
+        font-family: $btn-font;
+
+        &::placeholder {
+          color: #BFBFBF;
+        }
+        &:focus {
+          border: 1px solid darken(#BFBFBF, 15%);
+          outline: none;
+        }
+      }
+    }
+
+    .date-grp {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .input-grp {
+        flex: 1;
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .btn-grp {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center !important;
+
+      #btn-publish{
+        background-color: $orange-500;
+        color: white;
+        cursor: pointer;
+        border: none;
+      }
+      #btn-draft {
+        background-color: transparent;
+        border: 1px solid $orange-500;
+        color: $orange-500;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba($orange-500, 0.1);
+        }
+      }
+
+      #btn-publish[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      button{
+        margin-top: 2rem;
+        width: 12.5rem !important;
+        font-family: $btn-font;
+        font-size: 1.125rem;
+        @include button-style;
+      }
+    }
+  }
+}

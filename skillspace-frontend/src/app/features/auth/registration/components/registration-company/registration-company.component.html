@@ -1,0 +1,132 @@
+<div class="company-form-container">
+  <h5>Company Registration</h5>
+  <form [formGroup]="companyForm" (ngSubmit)="submitCompanyForm()">
+    <div class="grid">
+      <app-cva
+        label="Company name"
+        formControlName="name"
+        type="text"
+        placeholder="Enter your company name here"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['name']"
+        [message]="toastMessages['name'].message"
+        [toastType]="toastMessages['name'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Password"
+        formControlName="password"
+        type="password"
+        placeholder="******"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['password']"
+        [message]="toastMessages['password'].message"
+        [toastType]="toastMessages['password'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Confirm password"
+        formControlName="confirmPassword"
+        type="password"
+        placeholder="******"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['confirmPassword']"
+        [message]="toastMessages['confirmPassword'].message"
+        [toastType]="toastMessages['confirmPassword'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Website"
+        formControlName="website"
+        type="text"
+        placeholder="Enter website here"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['website']"
+        [message]="toastMessages['website'].message"
+        [toastType]="toastMessages['website'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Registration certificate"
+        formControlName="certificate"
+        type="file"
+        placeholder="No file chosen"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['certificate']"
+        [message]="toastMessages['certificate'].message"
+        [toastType]="toastMessages['certificate'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Email address"
+        formControlName="email"
+        type="email"
+        placeholder="Enter address here"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['email']"
+        [message]="toastMessages['email'].message"
+        [toastType]="toastMessages['email'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Contact Information"
+        formControlName="contact"
+        type="text"
+        placeholder="+233 *** ***** ****"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['contact']"
+        [message]="toastMessages['contact'].message"
+        [toastType]="toastMessages['contact'].type"
+        class="error"
+      ></app-toast>
+
+      <app-cva
+        label="Company logo"
+        formControlName="logo"
+        type="file"
+        placeholder="Upload logo"
+        class="form-group"
+      />
+      <app-toast
+        *ngIf="toastMessages['logo']"
+        [message]="toastMessages['logo'].message"
+        [toastType]="toastMessages['logo'].type"
+        class="error"
+      ></app-toast>
+    </div>
+
+    <button type="submit" class="btn" [disabled]="companyForm.invalid">
+      Register
+    </button>
+    <div class="redirect">
+      <p>
+        Already have an account?
+        <span [routerLink]="['/auth/login']">Login instead</span>
+      </p>
+      <p class="policy">
+        By registering an account, you agree our Terms of Service and Privacy
+        Policy.
+      </p>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,94 @@
+<div class="talent-form-container">
+  <h5 (click)="openDialog()">Talent Registration</h5>
+  <form [formGroup]="talentForm" (ngSubmit)="submitTalentForm()">
+    <app-cva
+      label="Full name"
+      formControlName="name"
+      type="text"
+      placeholder="Enter name here"
+      class="form-group"
+      [name]="'name'"
+    />
+    <app-toast
+      *ngIf="toastMessages['name']"
+      [message]="toastMessages['name'].message"
+      [toastType]="toastMessages['name'].type"
+      class="error"
+    />
+
+    <app-cva
+      label="Email Address"
+      formControlName="email"
+      type="email"
+      placeholder="Enter address here"
+      class="form-group"
+      [name]="'email'"
+      class="error"
+    />
+    <app-toast
+      *ngIf="toastMessages['email']"
+      [message]="toastMessages['email'].message"
+      [toastType]="toastMessages['email'].type"
+      class="error"
+    ></app-toast>
+
+    <app-cva
+      label="Contact Information"
+      formControlName="contact"
+      type="text"
+      placeholder="+233 *** ***** ****"
+      class="form-group"
+      [name]="'contact'"
+    />
+    <app-toast
+      *ngIf="toastMessages['contact']"
+      [message]="toastMessages['contact'].message"
+      [toastType]="toastMessages['contact'].type"
+      class="error"
+    ></app-toast>
+
+    <app-cva
+      label="Password"
+      formControlName="password"
+      type="password"
+      placeholder="****"
+      class="form-group"
+      [name]="'password'"
+    />
+    <app-toast
+      *ngIf="toastMessages['password']"
+      [message]="toastMessages['password'].message"
+      [toastType]="toastMessages['password'].type"
+      class="error"
+    ></app-toast>
+
+    <app-cva
+      label="Confirm Password"
+      formControlName="confirmPassword"
+      type="password"
+      placeholder="****"
+      class="form-group"
+      [name]="'confirmPassword'"
+    />
+    <app-toast
+      *ngIf="toastMessages['confirmPassword']"
+      [message]="toastMessages['confirmPassword'].message"
+      [toastType]="toastMessages['confirmPassword'].type"
+      class="error"
+    ></app-toast>
+
+    <button type="submit" class="btn" [disabled]="talentForm.invalid">
+      Register
+    </button>
+    <div class="redirect">
+      <p>
+        Already have an account?
+        <span [routerLink]="['/auth/login']">Login instead</span>
+      </p>
+      <p class="policy">
+        By registering an account, you agree our Terms of Service and Privacy
+        Policy.
+      </p>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+
+<section>
+  <app-programs-header [title]="'Saved drafts'"
+      [subtitle]="'Below are programe you didn\'t finish created'"
+    />
+
+    <div  class="drafts">
+      <ng-container  *ngFor="let draft of drafts;">
+        <app-draft-card [draft]="draft"/>
+      </ng-container>
+    </div>
+</section>

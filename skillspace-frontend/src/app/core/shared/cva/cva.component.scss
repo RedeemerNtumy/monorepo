@@ -1,0 +1,33 @@
+@use "../../../../stylesheet/variables" as *;
+@use "../../../../stylesheet/typography" as *;
+
+div {
+  width: 100%;
+
+  label {
+    font-size: 1.6rem;
+    font-family: $btn-font;
+  }
+
+  input {
+    margin-top: 0.625rem;
+    height: 4.3rem;
+    border-radius: 0.4rem;
+    border: 1px solid #bfbfbf;
+    padding: 1rem;
+    font-size: 1.6rem;
+    width: 100%;
+
+    &::placeholder {
+      color: #bfbfbf;
+    }
+    &:focus {
+      border: 1px solid darken(#d32f2f, 15%);
+      outline: none;
+    }
+
+    &.password-error {
+      border: 1px solid #d32f2f;
+    }
+  }
+}

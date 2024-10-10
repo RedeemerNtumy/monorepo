@@ -1,0 +1,43 @@
+<main>
+  <div class="main">
+    <section class="login-grp-1">
+      <button type="button">
+        <img src="../../../../assets/images/google_logo.svg" alt="">
+        Continue with google
+      </button>
+      <div class="divider">
+        <mat-divider></mat-divider>
+        <span>OR</span>
+        <mat-divider></mat-divider>
+      </div>
+    </section>
+    <section class="login-grp-2">
+      <h3>Welcome back, Login to your account</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <app-cva label="Email Address" placeholder="Email address here"
+          formControlName="email"
+        type="text"/>
+        <app-cva label="Password" placeholder="*****"
+          formControlName="password"
+        type="text"/>
+        <div>
+
+        </div>
+
+        <a routerLink="/auth/password-reset">Forgot password?</a>
+        <app-toast *ngIf="showToast" [message]="toastMessage" [toastType]="toastType"/>
+        <app-loader
+          [isLoading]="isLoading"
+          [buttonClass]="'button'"
+          (buttonClick)="login()"
+        >
+          Login
+        </app-loader>
+      </form>
+      <p class="login-grp-3">
+        Don't have an account?
+        <a routerLink="../register" class="link-effect">Sign up instead</a>
+      </p>
+    </section>
+  </div>
+</main>

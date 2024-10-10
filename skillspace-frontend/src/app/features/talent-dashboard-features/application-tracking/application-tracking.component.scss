@@ -1,0 +1,77 @@
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+.container{
+    @include flexbox(column);
+    gap: 3rem;
+    margin: 0 4rem;
+    .program-card{
+        .card-content{
+            @include flexbox;
+            justify-content: space-between;
+            .left-info{
+                @include flexbox;
+                .company-logo{
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                }
+                .info{
+                    @include flexbox(column, center);
+                    gap: 1rem;
+                    margin-left: 3.5rem;
+                    p{
+                       @include flexbox;
+                       gap:1rem;
+                    }
+                }
+            }
+        }
+        .btn{
+            @include button-style();
+            width: fit-content;
+            padding-left: 3.2rem;
+            padding-right: 3.2rem;
+            margin-left: auto;
+        }
+    }
+    .status{
+        height: fit-content;
+        padding: 0.2rem 1rem;
+        border-radius: 1.5rem;
+        font-size: 1.3rem;
+    }
+    .available{
+        background-color: $success-green;
+        color:$white;
+    }
+    .closed{
+        background-color: $error-red;
+        color:$white;
+    }
+
+    .icon-group-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .div1{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 50%;
+            grid-row-gap:3.5rem;
+           .icon-group{
+            @include flexbox(column);
+            width: fit-content;
+            gap: 1rem;
+            .icon-with-text{
+                @include flexbox;
+                align-items: center;
+                gap: 1rem;
+                p{
+                    margin-left: 1rem;
+                }
+            }
+           } 
+        }
+    }
+}

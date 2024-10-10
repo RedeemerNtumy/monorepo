@@ -10,9 +10,11 @@
 
     <modules>
         <module>skillspace-backend/program-management-service</module>
+        <module>skillspace-backend/assesment-Service</module>
         <module>skillspace-backend/User-Service</module>
         <module>tests/ui-tests</module>
         <module>tests/api-tests</module>
+
     </modules>
     <properties>
         <spring-boot.version>3.3.4</spring-boot.version>

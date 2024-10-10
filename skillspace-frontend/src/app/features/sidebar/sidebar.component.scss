@@ -1,0 +1,52 @@
+@use '../../../stylesheet/variables' as *;
+@use '../../../stylesheet/mixins' as *;
+.sidenav{
+    height: 100%;
+    @include flexbox(column);
+    .app-logo{
+        @include flexbox;
+        align-items: center;
+        gap: 0.46rem;
+        font-size: 2.3rem;
+        padding-left: 2.4rem;
+        margin-bottom: 8rem;
+    }
+    mat-list-item{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        height: 4.4rem;
+        width: 27.1rem;
+        padding-left: 3.2rem;
+        gap: 1rem;
+        .inactive{
+            fill: $grey-lighter;
+        }
+        mat-icon{
+            margin: 0;
+        }
+        .item-title{
+            font-weight: 500;
+        }
+    }
+    .active{
+        background-color: $orange-50;
+        fill: $orange-500;
+        .item-title{
+            color: $orange-500;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background-color: $error-red;
+        }
+    }
+
+    .footer-list{
+        margin-top: auto;
+    }
+}

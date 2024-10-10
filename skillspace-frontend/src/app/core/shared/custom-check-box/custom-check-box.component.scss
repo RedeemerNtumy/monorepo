@@ -1,0 +1,28 @@
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+.checkbox-container{
+    @include flexbox;
+    align-items: center;
+    gap: 1rem;
+
+    .checkbox{
+        display: grid;
+        place-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 0.56rem;
+        flex-shrink: 0;
+    }
+    .checked-border{
+        border: 0.2rem solid $orange-500;
+    }
+    .unchecked-border{
+        border: 0.2rem solid $grey-placeholder;
+    }
+    .check{
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 0.4rem;
+        background-color: $orange-500;
+    }
+}

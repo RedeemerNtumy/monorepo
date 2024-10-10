@@ -1,0 +1,73 @@
+<section>
+  <form [formGroup]="createProgram">
+    <div class="input-grp">
+      <label for="name">Program Name</label>
+      <input type="text" name="name"
+      placeholder="Enter program name" formControlName="programName"/>
+    </div>
+
+    <div class="textarea">
+      <label for="">Program Description</label>
+      <textarea placeholder="Description for program"
+                formControlName="programDescription" rows="4" cols="50"></textarea>
+    </div>
+
+    <div class="textarea">
+      <label for="">Program Requirements</label>
+      <textarea placeholder="List program requirements"
+                formControlName="programRequirements" rows="4" cols="50"></textarea>
+    </div>
+
+    <div class="input-grp">
+      <label for="earned-badges">Required Earned Badges</label>
+      <input type="text" name="earned-badges"
+      placeholder="Enter required badges (comma-separated)" formControlName="requireEarnedBadges"
+      />
+    </div>
+
+    <div class="input-grp">
+      <label for="additional-badges">Additional Earned Badges (Optional)</label>
+      <input type="text" name="additional-badges"
+      placeholder="Enter optional badges (comma-separated)"
+      formControlName="optionalBadges"
+      />
+    </div>
+
+    <div class="input-grp">
+      <label for="upload-image">Upload Program Picture</label>
+      <input type="file" name="upload-image"
+      placeholder="Upload program image"
+      formControlName="programPicture"
+      />
+    </div>
+
+    <div class="date-grp">
+      <div class="input-grp">
+        <label for="start-date">Date of Commencement</label>
+        <input type="date" name="start-date"
+        placeholder="October - 14 - 1985"
+        formControlName="startDate"
+        />
+      </div>
+
+      <div class="input-grp">
+        <label for="end-date">Date Completed</label>
+        <input type="date" name="end-date"
+        placeholder="October - 14 - 1985"
+        formControlName="endDate"
+        />
+      </div>
+    </div>
+
+    <div class="btn-grp">
+      <button type="button"    id="btn-publish" [disabled]="true" >
+        Publish programme
+      </button>
+
+
+      <button type="button">
+        Save as draft
+      </button>
+    </div>
+  </form>
+</section>

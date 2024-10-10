@@ -1,0 +1,102 @@
+@use "../../../../stylesheet/mixins" as *;
+@use "../../../../stylesheet/variables" as *;
+
+.education-div {
+  width: 100%;
+  background-color: $white;
+  padding: 2rem;
+  border-radius: 0.8rem;
+
+  .education-content {
+    width: 100%;
+    @include flexbox(column, flex-start, flex-start);
+    gap: 2.4rem;
+
+    .col-1 {
+      width: 100%;
+      @include flexbox(row, space-between, center);
+
+      .col-1__text {
+        font-size: 1.6rem;
+
+        .title {
+          font-weight: 600;
+          color: #333333;
+          line-height: 1.25;
+        }
+
+        .desc {
+          color: #6b6b6b;
+          font-weight: 400;
+          line-height: 1.25;
+        }
+      }
+
+      .col-1__btn {
+        background: $orange-500;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        @include flexbox(row, center, center);
+        gap: 0.8rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 1.2rem 3.2rem;
+        height: 5.5rem;
+        border-radius: 0.8rem;
+
+        &:hover {
+          background-color: darken($color: $orange-500, $amount: 5%);
+        }
+      }
+    }
+
+    .col-2 {
+      width: 100%;
+      background-color: $orange-50;
+      @include flexbox(row, flex-start, center);
+      border-radius: 0.8rem;
+      height: 11.3rem;
+      gap: 23.8rem;
+      padding: 1.6rem;
+
+      .education {
+        @include flexbox(column, flex-start, flex-start);
+        gap: 0.8rem;
+
+        .degree {
+          font-weight: 600;
+          color: #333333;
+        }
+
+        .school {
+          font-weight: 400;
+          color: #6b6b6b;
+        }
+
+        .file {
+          @include flexbox(row, flex-start, center);
+          gap: 0.8rem;
+          font-weight: 400;
+          font-size: 1.3rem;
+        }
+      }
+
+      .btn-div {
+        @include flexbox(row, center, center);
+        gap: 1.6rem;
+
+        button {
+          background: none;
+          border: none;
+          text-align: center;
+          @include flexbox(row, center, center);
+          gap: 0.25rem;
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: #6b6b6b;
+        }
+      }
+    }
+  }
+}

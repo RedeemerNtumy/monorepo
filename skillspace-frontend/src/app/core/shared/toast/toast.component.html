@@ -1,0 +1,7 @@
+<div class="toast" [ngClass]="toastType">
+  <div class="toast-header">
+    <img [src]="getIconPath()" [alt]="toastType">
+    <span>{{ getTitle() }}</span>
+  </div>
+  <p>{{ message }}</p>
+</div>

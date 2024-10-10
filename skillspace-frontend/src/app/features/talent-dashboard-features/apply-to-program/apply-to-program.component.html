@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="navigation">
+        <a routerLink="/auth/login/">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            Back
+          </a>
+    </div>
+    <form [formGroup]="applicationForm" class="form">
+        <div class="header">
+            <div class="row">
+                <span class="status available">Available</span>
+            </div>
+            <div class="program-name">
+                <h1>Software Engineering Internship</h1>
+            </div>
+            <div class="company">
+                <div class="company-logo">                    
+                    <img src="assets/images/company-icon.svg" alt="" srcset="">
+                </div>
+                <span>Google</span>
+            </div>
+        </div>
+        <div class="attachments">
+            <div class="attachment">
+                <img src="assets/images/cv-icon.svg" alt="">
+                Your CV is attached from your profile.
+            </div>
+            <div class="attachment">
+                <img src="assets/images/academics-icon.svg" alt="">
+                Academic details are included from your profile.
+            </div>
+            <div class="attachment">
+                <img src="assets/images/academics-icon.svg" alt="">
+                Work experience is included from your profile.
+            </div>
+        </div>
+        <div class="application-reason">
+            <p>Why are you interested in this specific program?</p>
+            <textarea formControlName="interest" name="reason" id="reason" rows="5" ></textarea>
+        </div>
+        
+        <div class="application-reason">
+            <p>What is you prefared starting date?</p>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <!-- <mat-label>Choose a date</mat-label> -->
+                <input formControlName="preferedStartDate" matInput [min]="minDate" [matDatepicker]="picker">
+                <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>              
+        </div>
+        <div class="confirm">
+            <app-custom-check-box 
+            formControlName="confirmProfileInfo"
+            class="checkbox" text="I confirm that my profile information is up to date"/>
+            <app-custom-check-box 
+            formControlName="confirmTerms"
+            text="I agree to the terms and conditions of this program"/>
+        </div>
+        
+    </form>
+    <button [disabled]="applicationForm.valid" (click)="submit()" class="btn" [class]="applicationForm.valid? 'btn-active':'btn-inactive'" routerLink="/home-talent/applications">Apply now</button>
+</div>

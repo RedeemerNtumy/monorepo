@@ -1,0 +1,13 @@
+<body>
+  <div  class="content">
+    <app-programs-header [title]="'Published programes'"
+      [subtitle]="'Here\'s a list of career programes you have published'"
+    />
+    <div  class="program">
+      <ng-container *ngFor="let program of publishedPrograms">
+        <app-program-card [program]="program"/>
+      </ng-container>
+    </div>
+
+  </div>
+</body>

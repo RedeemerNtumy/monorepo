@@ -1,12 +1,9 @@
 package com.skillspace.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
@@ -25,7 +22,7 @@ public class Program {
     private boolean isDraft;
     private String coverImageForProgram;
 
-    @OneToMany(mappedBy = "program", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ChangeLog> changeLogs = new ArrayList<>();
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private boolean deleted = false;
 
 }

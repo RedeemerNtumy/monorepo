@@ -1,0 +1,31 @@
+<section>
+  <nav>
+    <ul>
+      <li
+        (click)="setActiveTab('create')"
+        routerLink="/company/programs/create"
+        routerLinkActive="active"
+        [ngClass]="{'active': activeTab === 'create'}">
+        Career program creation
+      </li>
+      <li
+        (click)="setActiveTab('drafts')"
+        routerLink="/company/programs/drafts"
+        routerLinkActive="active"
+        [ngClass]="{'active': activeTab === 'drafts'}">
+        Saved drafts
+      </li>
+      <li
+        (click)="setActiveTab('published')"
+        routerLink="/company/programs/published"
+        routerLinkActive="active"
+        [ngClass]="{'active': activeTab === 'published'}">
+        Published programs
+      </li>
+    </ul>
+  </nav>
+  <mat-divider></mat-divider>
+  <div class="programs-view">
+    <router-outlet></router-outlet>
+  </div>
+</section>

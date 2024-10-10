@@ -1,0 +1,10 @@
+@use '../../../stylesheet/variables' as *;
+.header-container{
+    display: flex;
+    height: 6.4rem;
+    background-color: $white;
+    align-items: center;
+    .profile-icon-list{
+        margin-left: auto;
+    }
+}

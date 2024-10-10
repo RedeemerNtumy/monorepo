@@ -1,0 +1,35 @@
+@use '../../../../stylesheet/typography' as *;
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+
+
+.input-otp-grp {
+  width: 100%;
+  display: flex;
+  gap: 70px;
+  margin-top: 25px;
+
+  input {
+    border-radius: $input-otp-border-radius;
+    border: 1px solid $input-otp-border-color;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    padding-left: 3rem;
+    font-size: 2.3rem;
+    @include flexbox($direction: row, $justify: center, $align: center);
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $orange-500;
+    }
+
+    &.error {
+      border-color: $error-red;
+      &::placeholder{
+        color: $error-red;
+      }
+    }
+  }
+}

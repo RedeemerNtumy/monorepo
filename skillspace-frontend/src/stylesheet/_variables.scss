@@ -1,3 +1,4 @@
+
 // orange
 $orange-500: #dd5928;
 $orange-300: #e8906f;
@@ -8,6 +9,7 @@ $orange-50-light: #fffaf8;
 $dark: #000000;
 $dark-title: #262626;
 
+
 // white
 $white: #ffffff;
 
@@ -16,6 +18,11 @@ $grey: #bfbfbf;
 $grey-50: #595959;
 $grey-placeholder: #999999;
 $grey-100: #6b6b6b;
+$divider-color: #C0C0C0;
+$divider-txt-color: #333333;
+$grey-lighter:#8a8a8a;
+$verify-txt: #737373;
+
 
 // error
 $error-red: #d32f2f;
@@ -42,6 +49,10 @@ $input-radius-sm: 4px;
 $input-radius-md: 8px;
 $input-border-color: var(--$grey);
 $input-border-width: 1px;
+$input-otp-border-radius: 12px;
+$input-otp-border-color: #8C8C8C;
+
 
 // button
 $button-border-radius: 8px;
+

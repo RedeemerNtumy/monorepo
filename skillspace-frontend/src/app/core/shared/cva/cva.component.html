@@ -1,0 +1,10 @@
+<!-- <input #txt (input)="updateValue(txt.value)" type="text"> -->
+<div>
+    <label [for]="name">{{ label }}</label>
+    <input
+      [type]="type"
+      #txt (input)="updateValue(txt.value)"
+      [placeholder]="placeholder"
+    />
+    
+  </div>

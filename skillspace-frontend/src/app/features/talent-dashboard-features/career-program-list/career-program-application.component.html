@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="actions">
+        <input class="search-input" type="text" placeholder="Search program">
+        <select name="" id="">
+            <option value="one">all companies</option>
+            <option value="one">two</option>
+            <option value="one">three</option>
+        </select>
+        <select name="" id="">
+            <option value="one">all badges</option>
+            <option value="one">two</option>
+            <option value="one">three</option>
+        </select>
+        <select name="" id="">
+            <option value="one">one</option>
+            <option value="one">two</option>
+            <option value="one">three</option>
+        </select>
+    </div>
+    <div class="grid">
+        @for (item of [1,2,3,4,5,6]; track $index) {
+            <div class="item">
+                <div class="row">
+                    <div class="company-logo">                    
+                        <img src="assets/images/google_logo.svg" alt="" srcset="">
+                    </div>
+                    <span class="status available">Available</span>
+                </div>
+                <div class="company-name">
+                    <small class="span">Google</small>
+                    <small>18 days ago</small>
+                </div>
+                <h3 class="title">Software Engineering Internship</h3>
+                <div class="icon-groups">
+                    <span class="icon-group">
+                        <img src="assets/images/calendar-icon.svg" alt="calendar">
+                        <small>Sep 16 - Sep 24, 2024</small>
+                    </span>
+                </div>
+                <div class="badge-chips">
+                    <span class="chip">Java</span>
+                    <span class="chip">Javascript</span>
+                    <span class="chip">PHP</span>
+                </div>
+                <button class="btn" routerLink="/home-talent/program-detail">View Program</button>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="registration">
+  <div class="registration-div">
+    <!-- sign up with Google Button -->
+    <div class="google-signup">
+      <button (click)="signupWithGoggle()">
+        <img src="assets/images/google_logo.svg" alt="Google Logo" />
+        Sign up with Google
+      </button>
+    </div>
+    <div class="divider">
+      <span class="line"></span>OR<span class="line"></span>
+    </div>
+    <div class="registration__buttons">
+      <button
+        class="btn company-tab"
+        [class.active]="isCompanyFormVisible"
+        (click)="toggleForm(true)"
+        (click)="setRole('COMPANY')"
+      >
+        Register as a company
+      </button>
+      <button
+        class="btn talent-tab"
+        [class.active]="!isCompanyFormVisible"
+        (click)="toggleForm(false)"
+        (click)="setRole('TALENT')"
+      >
+        Register as a talent
+      </button>
+    </div>
+  </div>
+
+  <div class="registration__form">
+    <app-registration-company *ngIf="isCompanyFormVisible" [role]="role" />
+    <app-registration-talent *ngIf="!isCompanyFormVisible" [role]="role" />
+  </div>
+</div>
+

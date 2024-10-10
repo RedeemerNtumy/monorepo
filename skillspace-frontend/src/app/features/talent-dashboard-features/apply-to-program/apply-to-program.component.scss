@@ -1,0 +1,101 @@
+@use '../../../../stylesheet/variables' as *;
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/typography' as *;
+
+.container{
+    .navigation{
+        a{
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            font-family: $btn-font;
+            color: #000;
+          }
+    }
+    .form{
+        margin: 0 9.8rem;
+        padding: 1rem;
+        background-color: $white;
+        font-weight: 500;
+        .row{
+            @include flexbox(row, space-between, center);
+            margin-bottom: 1rem;
+            
+            .status{
+                height: fit-content;
+                margin-left: auto;
+                font-size: 13px;
+                padding: 0.2rem 1rem;
+                border-radius: 1.5rem;
+            }
+            .available{
+                background-color: $success-green;
+                color:$white;
+            }
+            .closed{
+                background-color: $error-red;
+                color:$white;
+            }
+        }
+        
+        .company{
+            @include flexbox(row, flex-start);
+            align-items: center;
+            gap: 1rem;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: $grey-100;
+        }
+        .attachments{
+            border: 1px solid $grey;
+            padding: 0 1rem;
+            border-radius: 0.8rem;
+            .attachment{
+               @include flexbox; 
+               align-items: center;
+               height: 4.8rem;
+               gap: 1rem;
+            }
+        }
+        .application-reason{
+            @include flexbox(column);
+            gap: 1.8rem;
+            margin: 2.6rem 0 4.5rem 0;
+            textarea{
+                border: 1px solid $grey;
+                padding: 0.8rem;
+                outline: none;
+                border-radius: 0.8rem;
+                resize: vertical;
+                // &:focus{
+                //     outline: 1px solid blue;
+                // }
+            }
+        }
+        .confirm{
+            @include flexbox(column);
+            gap:1rem;
+            .checkbox{
+                // font-size: 28px;
+            }
+        }
+    }
+    .btn{
+        @include button-style($white,);
+        width: -webkit-fill-available;
+        margin: 3.3rem 9.8rem;
+        border: none;
+    }
+    .btn-active{
+        background-color: $orange-500;
+        color: $white;
+    }
+    .btn-inactive{
+        background-color: $orange-100;
+        color: $white;
+        cursor:not-allowed;
+    }
+}

@@ -1,0 +1,25 @@
+@use '../../../../stylesheet/typography' as *;
+@use '../../../../stylesheet/mixins' as *;
+@use '../../../../stylesheet/variables' as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.25rem;
+
+  .content{
+    padding: 1.25rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    margin-top: 2.625rem;
+    padding: 2.4375rem 1.25rem ;
+    display: flex;
+    flex-direction: column;
+
+    .program{
+      @include flexbox($direction: column);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+  }
+}
